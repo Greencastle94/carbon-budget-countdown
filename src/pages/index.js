@@ -56,16 +56,16 @@ const ReadMore = styled.div`
 function getRandomBackground() {
   const backgrounds = [
     {
-      backgroundImage: "url('/industry.jpg')",
+      backgroundImage: "url(./industry.jpg)",
       backgroundPosition: "-965px -221px",
     },
     {
-      backgroundImage: "url('/aviation.jpg')",
+      backgroundImage: "url(./aviation.jpg)",
       backgroundPosition: "-300px 0",
     },
     {
       backgroundSize: "cover",
-      backgroundImage: "url('/cars.jpg')",
+      backgroundImage: "url(./cars.jpg)",
       backgroundPosition: "-445px",
     },
   ];
