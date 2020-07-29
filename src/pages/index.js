@@ -1,7 +1,11 @@
 import React from "react";
 import styled from "@emotion/styled";
+// Components
 import Layout from "../components/Layout";
+// Functions
 import getRandomInt from "../utils/getRandomInt";
+// Images
+import downArrowSVG from "../../static/down-arrow.svg";
 
 const Background = styled.div`
   width: 100%;
@@ -121,7 +125,7 @@ export default function Home() {
 
           <ReadMore>
             <p>Läs mer</p>
-            <img src="/down-arrow.svg" alt="" />
+            <img src={downArrowSVG} alt="" />
           </ReadMore>
         </StartContent>
       </Background>
