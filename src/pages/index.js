@@ -2,7 +2,6 @@ import React from "react";
 import styled from "@emotion/styled";
 import Layout from "../components/Layout";
 import getRandomInt from "../utils/getRandomInt";
-import ContentWrapper from "../components/ContentWrapper";
 
 const Background = styled.div`
   width: 100%;
@@ -10,13 +9,13 @@ const Background = styled.div`
 `;
 
 const EmptySpace = styled.div`
-  height: 70vh;
+  height: 60vh;
 `;
 
 const StartContent = styled.div`
   background-color: rgba(0, 0, 0, 0.54);
   padding: 1rem 16px 0 16px;
-  height: calc(30vh - 1rem);
+  height: calc(40vh - 1rem);
 
   p {
     margin-bottom: 0.5rem;
@@ -29,6 +28,25 @@ const Countdown = styled.p`
   font-family: Verdana;
   font-size: 1.5rem;
   display: inline-block;
+`;
+
+const ReadMore = styled.div`
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-bottom: 5px;
+
+  p {
+    text-align: center;
+  }
+
+  img {
+    color: white;
+    display: block;
+    width: 10%;
+    margin: auto;
+  }
 `;
 
 function getRandomBackground() {
@@ -44,46 +62,43 @@ function getRandomBackground() {
     {
       backgroundSize: "cover",
       backgroundImage: "url('/cars.jpg')",
-      backgroundPosition: "-634px",
+      backgroundPosition: "-445px",
     },
   ];
 
   return backgrounds[getRandomInt(backgrounds.length)];
 }
 
-// Unit: MtCO2
-const currentBudget = 370;
-const currentEmissions = 51.8; // 2018
-const startDate = new Date("Jan 1, 2020 00:00:00");
+// GLOBAL CONSTANTS
+const CURRENT_BUDGET = 370; // (MtCO2) post-2019
+const CURRENT_EMISSIONS = 49.8; // (MtCO2) preliminary numbers for 2019
+const START_DATE = new Date("Jan 1, 2020 00:00:00");
 
 export default function Home() {
-  const millisecondsLeft = (currentBudget / currentEmissions) * 31556952000; //milliseconds
-  const then = startDate.getTime() + millisecondsLeft;
-  const now = new Date().getTime();
-
-  const [counter, setCounter] = React.useState(then - now);
+  const [counter, setCounter] = React.useState(0);
   const [timeLeft, setTimeLeft] = React.useState({});
   const [background, setBackground] = React.useState();
 
-  React.useEffect(() => setBackground(getRandomBackground()), []);
-
+  // Initial calculations
   React.useEffect(() => {
-    const seconds = Math.floor((counter % (1000 * 60)) / 1000);
-    const minutes = Math.floor((counter % (1000 * 60 * 60)) / (1000 * 60));
-    const hours = Math.floor(
-      (counter % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-    );
-    const days = Math.floor(
-      (counter % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24)
-    );
-    const years = Math.floor(counter / (1000 * 60 * 60 * 24 * 365));
+    setBackground(getRandomBackground());
 
+    const millisecondsLeft = (CURRENT_BUDGET / CURRENT_EMISSIONS) * 31556952000;
+    const then = START_DATE.getTime() + millisecondsLeft;
+    const now = new Date().getTime();
+    setCounter(then - now);
+  }, []);
+
+  // Updating counter
+  React.useEffect(() => {
     setTimeLeft({
-      years: years,
-      days: days,
-      hours: hours,
-      minutes: minutes,
-      seconds: seconds,
+      years: Math.floor(counter / (1000 * 60 * 60 * 24 * 365)),
+      days: Math.floor(
+        (counter % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24)
+      ),
+      hours: Math.floor((counter % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+      minutes: Math.floor((counter % (1000 * 60 * 60)) / (1000 * 60)),
+      seconds: Math.floor((counter % (1000 * 60)) / 1000),
     });
 
     counter > 0 && setTimeout(() => setCounter(counter - 1000), 1000);
@@ -103,6 +118,11 @@ export default function Home() {
             timeLeft.minutes
           } min, ${timeLeft.seconds} sek`}</Countdown>
           <p>om vi ska uppnå vår del av Parisavtalet.</p>
+
+          <ReadMore>
+            <p>Läs mer</p>
+            <img src="/down-arrow.svg" alt="" />
+          </ReadMore>
         </StartContent>
       </Background>
     </Layout>
