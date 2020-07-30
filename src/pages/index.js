@@ -2,6 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 // Components
 import Layout from "../components/Layout";
+import ContentWrapper from "../components/ContentWrapper";
 // Functions
 import getRandomInt from "../utils/getRandomInt";
 // Images
@@ -129,6 +130,61 @@ export default function Home() {
           </ReadMore>
         </StartContent>
       </Background>
+
+      <ContentWrapper>
+        <h2>Var kommer siffrorna ifrån?</h2>
+        <p>
+          Nedräkningen är baserad på Sveriges andel av den globala
+          koldioxidbudgeten som vi kan släppa ut innan vi uppnår 1,5 graders
+          uppvärmning. Tillsammans med siffror på Sveriges årliga utsläpp kan
+          man räkna fram hur mycket tid vi har kvar innan vi uppnått 1,5 graders
+          uppvärmning.
+        </p>
+        <p>
+          Källor:
+          <ul>
+            <li>
+              <a href="https://www.naturvardsverket.se/Sa-mar-miljon/Klimat-och-luft/Klimat/Tre-satt-att-berakna-klimatpaverkande-utslapp/Kvartals--och-preliminara-arsvisa-vaxthusgasutslapp/">
+                <i>Kvartals- och preliminära årsvisa växthusgasutsläpp</i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.tandfonline.com/doi/full/10.1080/14693062.2020.1728209">
+                <i>
+                  A factor of two: how the mitigation plans of ‘climate
+                  progressive’ nations fall far short of Paris-compliant
+                  pathways
+                </i>
+              </a>
+            </li>
+          </ul>
+        </p>
+      </ContentWrapper>
+      <ContentWrapper>
+        <h2>Vad är en koldioxidbudget?</h2>
+        <p>
+          Mängden koldioxid i atmosfären korrelerar med en viss genomsnittlig
+          global temperatur. På så sätt kan man räkna fram ett tak för hur
+          mycket koldioxid vi kan släppa ut innan vi når en viss global
+          uppvärmning.
+        </p>
+        <p>
+          <a href="https://en.wikipedia.org/wiki/Emissions_budget">
+            Läs mer här
+          </a>
+        </p>
+      </ContentWrapper>
+      <ContentWrapper>
+        <h2>Det är ont om tid. Är det inte kört?</h2>
+        <p>
+          Det är sant att det är ont om tid men det är inte omöjligt att
+          fortfarande klara målet, men då krävs mer drastiska och ambitiösa
+          handlingar av oss alla. Som politiker, företag eller individ. Ny
+          teknik behövs men på den tidshorisont vi tittar på så kan vi inte
+          förlita oss på att tekniken kommer rädda oss. Andra lösningar som kan
+          minska utsläpp nu behövs.
+        </p>
+      </ContentWrapper>
     </Layout>
   );
 }

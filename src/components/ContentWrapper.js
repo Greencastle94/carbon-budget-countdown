@@ -2,7 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 
 const StyledContentWrapper = styled.div`
-  margin: auto 16px;
+  margin: 40px 16px;
 `;
 
 export default function ContentWrapper({ children }) {
