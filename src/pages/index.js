@@ -138,27 +138,25 @@ export default function Home() {
           koldioxidbudgeten som vi kan släppa ut innan vi uppnår 1,5 graders
           uppvärmning. Tillsammans med siffror på Sveriges årliga utsläpp kan
           man räkna fram hur mycket tid vi har kvar innan vi uppnått 1,5 graders
-          uppvärmning.
+          uppvärmning. Dock så räknar man inte in internationellt flyg eller
+          sjöfart. Så nedräkningsklockan visar en överskattad tid vi har kvar.
         </p>
-        <p>
-          Källor:
-          <ul>
-            <li>
-              <a href="https://www.naturvardsverket.se/Sa-mar-miljon/Klimat-och-luft/Klimat/Tre-satt-att-berakna-klimatpaverkande-utslapp/Kvartals--och-preliminara-arsvisa-vaxthusgasutslapp/">
-                <i>Kvartals- och preliminära årsvisa växthusgasutsläpp</i>
-              </a>
-            </li>
-            <li>
-              <a href="https://www.tandfonline.com/doi/full/10.1080/14693062.2020.1728209">
-                <i>
-                  A factor of two: how the mitigation plans of ‘climate
-                  progressive’ nations fall far short of Paris-compliant
-                  pathways
-                </i>
-              </a>
-            </li>
-          </ul>
-        </p>
+        <p>Källor:</p>
+        <ul>
+          <li>
+            <a href="https://www.naturvardsverket.se/Sa-mar-miljon/Klimat-och-luft/Klimat/Tre-satt-att-berakna-klimatpaverkande-utslapp/Kvartals--och-preliminara-arsvisa-vaxthusgasutslapp/">
+              <i>Kvartals- och preliminära årsvisa växthusgasutsläpp</i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.tandfonline.com/doi/full/10.1080/14693062.2020.1728209">
+              <i>
+                A factor of two: how the mitigation plans of ‘climate
+                progressive’ nations fall far short of Paris-compliant pathways
+              </i>
+            </a>
+          </li>
+        </ul>
       </ContentWrapper>
       <ContentWrapper>
         <h2>Vad är en koldioxidbudget?</h2>
