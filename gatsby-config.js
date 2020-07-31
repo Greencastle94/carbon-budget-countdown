@@ -6,6 +6,11 @@
 
 module.exports = {
   /* Your site config here */
-  plugins: [],
+  siteMetadata: {
+    title: `Ont om tid`,
+    description: `Klockan tickar på och vi behöver göra mer ifall vi ska uppnå vår del av parisavtalet.`,
+    author: `Greencastle`,
+  },
+  plugins: [`gatsby-plugin-react-helmet`],
   pathPrefix: "/carbon-budget-countdown",
 };
