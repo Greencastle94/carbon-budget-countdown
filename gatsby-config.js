@@ -11,6 +11,6 @@ module.exports = {
     description: `Klockan tickar på och vi behöver göra mer ifall vi ska uppnå vår del av parisavtalet.`,
     author: `Greencastle`,
   },
-  plugins: [`gatsby-plugin-react-helmet`],
+  plugins: [`gatsby-plugin-react-helmet`, `gatsby-plugin-emotion`],
   pathPrefix: "/carbon-budget-countdown",
 };
