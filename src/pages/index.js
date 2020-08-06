@@ -3,10 +3,14 @@ import styled from "@emotion/styled";
 // Components
 import Layout from "../components/Layout";
 import ContentWrapper from "../components/ContentWrapper";
-import BackgroundImage from "../components/BackgroundImage";
+import IndustryBackgroundSection from "../components/BackgroundSection/IndustryBackgroundSection";
+import AviationBackgroundSection from "../components/BackgroundSection/AviationBackgroundSection";
+import CarsBackgroundSection from "../components/BackgroundSection/CarsBackgroundSection";
 // Images
 import downArrowSVG from "../../static/down-arrow.svg";
 import linkSVG from "../../static/link.svg";
+// Functions
+import getRandomInt from "../utils/getRandomInt";
 
 const EmptySpace = styled.div`
   height: 60vh;
@@ -87,6 +91,9 @@ const START_DATE = new Date("Jan 1, 2020 00:00:00");
 export default function Home() {
   const [counter, setCounter] = React.useState(0);
   const [timeLeft, setTimeLeft] = React.useState({});
+  const [background, setBackground] = React.useState();
+
+  React.useEffect(() => setBackground(getRandomInt(3)), []);
 
   // Initial calculations
   React.useEffect(() => {
@@ -111,88 +118,102 @@ export default function Home() {
     counter > 0 && setTimeout(() => setCounter(counter - 1000), 1000);
   }, [counter]);
 
+  const content = (
+    <>
+      <EmptySpace />
+      <StartContent>
+        <p>
+          I <b>Sverige</b> måste utsläppen sluta helt om:{" "}
+        </p>
+        <Countdown>{`${timeLeft.years} år, ${timeLeft.days} ${
+          timeLeft.days === 1 ? "dag" : "dagar"
+        }, ${timeLeft.hours} ${timeLeft.hours === 1 ? "timme" : "timmar"}, ${
+          timeLeft.minutes
+        } min, ${timeLeft.seconds} sek`}</Countdown>
+        <p>om vi ska uppnå vår del av Parisavtalet.</p>
+
+        <ReadMore>
+          <p>Läs mer</p>
+          <img src={downArrowSVG} alt="" />
+        </ReadMore>
+      </StartContent>
+    </>
+  );
+
   return (
     <Layout>
-      <BackgroundImage>
-        <EmptySpace />
-        <StartContent>
+      {background === 1 ? (
+        <IndustryBackgroundSection>{content}</IndustryBackgroundSection>
+      ) : background === 2 ? (
+        <AviationBackgroundSection>{content}</AviationBackgroundSection>
+      ) : (
+        <CarsBackgroundSection>{content}</CarsBackgroundSection>
+      )}
+
+      <section>
+        <ContentWrapper>
+          <h2>Var kommer siffrorna ifrån?</h2>
           <p>
-            I <b>Sverige</b> måste utsläppen sluta helt om:{" "}
+            Nedräkningen är baserad på Sveriges andel av den globala
+            koldioxidbudgeten som vi kan släppa ut innan vi uppnår 1,5 graders
+            uppvärmning. Tillsammans med siffror på Sveriges årliga utsläpp kan
+            man räkna fram hur mycket tid vi har kvar innan vi uppnått 1,5
+            graders uppvärmning. Dock så räknar man inte in internationellt flyg
+            eller sjöfart. Så nedräkningsklockan visar en överskattad tid vi har
+            kvar.
           </p>
-          <Countdown>{`${timeLeft.years} år, ${timeLeft.days} ${
-            timeLeft.days === 1 ? "dag" : "dagar"
-          }, ${timeLeft.hours} ${timeLeft.hours === 1 ? "timme" : "timmar"}, ${
-            timeLeft.minutes
-          } min, ${timeLeft.seconds} sek`}</Countdown>
-          <p>om vi ska uppnå vår del av Parisavtalet.</p>
-
-          <ReadMore>
-            <p>Läs mer</p>
-            <img src={downArrowSVG} alt="" />
-          </ReadMore>
-        </StartContent>
-      </BackgroundImage>
-
-      <ContentWrapper>
-        <h2>Var kommer siffrorna ifrån?</h2>
-        <p>
-          Nedräkningen är baserad på Sveriges andel av den globala
-          koldioxidbudgeten som vi kan släppa ut innan vi uppnår 1,5 graders
-          uppvärmning. Tillsammans med siffror på Sveriges årliga utsläpp kan
-          man räkna fram hur mycket tid vi har kvar innan vi uppnått 1,5 graders
-          uppvärmning. Dock så räknar man inte in internationellt flyg eller
-          sjöfart. Så nedräkningsklockan visar en överskattad tid vi har kvar.
-        </p>
-        <p>Källor:</p>
-        <ul>
-          <li>
-            <a href="https://www.naturvardsverket.se/Sa-mar-miljon/Klimat-och-luft/Klimat/Tre-satt-att-berakna-klimatpaverkande-utslapp/Kvartals--och-preliminara-arsvisa-vaxthusgasutslapp/">
-              <i>Kvartals- och preliminära årsvisa växthusgasutsläpp</i>{" "}
-              <img src={linkSVG} alt="" />
+          <p>Källor:</p>
+          <ul>
+            <li>
+              <a href="https://www.naturvardsverket.se/Sa-mar-miljon/Klimat-och-luft/Klimat/Tre-satt-att-berakna-klimatpaverkande-utslapp/Kvartals--och-preliminara-arsvisa-vaxthusgasutslapp/">
+                <i>Kvartals- och preliminära årsvisa växthusgasutsläpp</i>{" "}
+                <img src={linkSVG} alt="" />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.tandfonline.com/doi/full/10.1080/14693062.2020.1728209">
+                <i>
+                  A factor of two: how the mitigation plans of ‘climate
+                  progressive’ nations fall far short of Paris-compliant
+                  pathways
+                </i>{" "}
+                <img src={linkSVG} alt="" />
+              </a>
+            </li>
+          </ul>
+        </ContentWrapper>
+        <ContentWrapper>
+          <h2>Vad är en koldioxidbudget?</h2>
+          <p>
+            Mängden koldioxid i atmosfären korrelerar med en viss genomsnittlig
+            global temperatur. På så sätt kan man räkna fram ett tak för hur
+            mycket koldioxid vi kan släppa ut innan vi når en viss global
+            uppvärmning.
+          </p>
+          <p>
+            <a href="https://en.wikipedia.org/wiki/Emissions_budget">
+              Läs mer här <img src={linkSVG} alt="" />
             </a>
-          </li>
-          <li>
-            <a href="https://www.tandfonline.com/doi/full/10.1080/14693062.2020.1728209">
-              <i>
-                A factor of two: how the mitigation plans of ‘climate
-                progressive’ nations fall far short of Paris-compliant pathways
-              </i>{" "}
-              <img src={linkSVG} alt="" />
-            </a>
-          </li>
-        </ul>
-      </ContentWrapper>
-      <ContentWrapper>
-        <h2>Vad är en koldioxidbudget?</h2>
-        <p>
-          Mängden koldioxid i atmosfären korrelerar med en viss genomsnittlig
-          global temperatur. På så sätt kan man räkna fram ett tak för hur
-          mycket koldioxid vi kan släppa ut innan vi når en viss global
-          uppvärmning.
-        </p>
-        <p>
-          <a href="https://en.wikipedia.org/wiki/Emissions_budget">
-            Läs mer här <img src={linkSVG} alt="" />
-          </a>
-        </p>
-      </ContentWrapper>
-      <ContentWrapper>
-        <h2>Det är ont om tid. Är det inte kört?</h2>
-        <p>
-          Det är sant att det är ont om tid men det är inte omöjligt att
-          fortfarande klara målet, men då krävs mer drastiska och ambitiösa
-          handlingar av oss alla. Som politiker, företag eller individ. Ny
-          teknik behövs men på den tidshorisont vi tittar på så kan vi inte
-          förlita oss på att tekniken kommer rädda oss. Andra lösningar som kan
-          minska utsläpp nu behövs.
-        </p>
-      </ContentWrapper>
+          </p>
+        </ContentWrapper>
+        <ContentWrapper>
+          <h2>Det är ont om tid. Är det inte kört?</h2>
+          <p>
+            Det är sant att det är ont om tid men det är inte omöjligt att
+            fortfarande klara målet, men då krävs mer drastiska och ambitiösa
+            handlingar av oss alla. Som politiker, företag eller individ. Ny
+            teknik behövs men på den tidshorisont vi tittar på så kan vi inte
+            förlita oss på att tekniken kommer rädda oss. Andra lösningar som
+            kan minska utsläpp nu behövs.
+          </p>
+        </ContentWrapper>
 
-      <ContentWrapper style={{ textAlign: "center" }}>
-        <BigLink href="https://www.dn.se/klimatet-just-nu/">
-          Klockan för världen just nu <img src={linkSVG} alt="" />
-        </BigLink>
-      </ContentWrapper>
+        <ContentWrapper style={{ textAlign: "center" }}>
+          <BigLink href="https://www.dn.se/klimatet-just-nu/">
+            Klockan för världen just nu <img src={linkSVG} alt="" />
+          </BigLink>
+        </ContentWrapper>
+      </section>
     </Layout>
   );
 }
