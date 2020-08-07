@@ -9,7 +9,7 @@ const path = require(`path`);
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: `Ont om tid`,
+    title: `Klimatklockan`,
     description: `Klockan tickar på och vi behöver göra mer ifall vi ska uppnå vår del av parisavtalet.`,
     author: `Greencastle`,
   },
