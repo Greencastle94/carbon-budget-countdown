@@ -42,7 +42,7 @@ export default function Circle({
         opacity="0.3"
       />
       <circle
-        stroke={progressColor}
+        stroke={"#006AA7"}
         transform="rotate(-90 175 175)"
         cx="175"
         cy="175"
@@ -53,6 +53,29 @@ export default function Circle({
         strokeLinecap={"round"}
         fill="none"
         style={{ strokeDashoffset, filter: "url(#dropshadow)" }}
+      />
+      <circle
+        stroke={"#FECC00"}
+        transform="rotate(-93.25 175 175)"
+        cx="175"
+        cy="175"
+        r="175"
+        strokeDasharray="1100"
+        strokeWidth={lineWidth / 3}
+        strokeDashoffset={`${strokeDashoffset - 2 * (lineWidth / 3)}`}
+        strokeLinecap={"round"}
+        fill="none"
+      />
+      <circle
+        stroke={"#FECC00"}
+        transform="rotate(-60 175 175)"
+        cx="175"
+        cy="175"
+        r="175"
+        strokeDasharray="1100"
+        strokeWidth={lineWidth}
+        strokeDashoffset={`${strokeDashoffset + strokeDashoffset / 3}`}
+        fill="none"
       />
     </svg>
   );
