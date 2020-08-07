@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 // Components
 import Layout from "../components/Layout";
 import ContentWrapper from "../components/ContentWrapper";
+import Circle from "../components/Circle";
 import IndustryBackgroundSection from "../components/BackgroundSection/IndustryBackgroundSection";
 import AviationBackgroundSection from "../components/BackgroundSection/AviationBackgroundSection";
 import CarsBackgroundSection from "../components/BackgroundSection/CarsBackgroundSection";
@@ -14,6 +15,49 @@ import getRandomInt from "../utils/getRandomInt";
 
 const EmptySpace = styled.div`
   height: 60vh;
+`;
+
+const GraphText = styled.div`
+  position: absolute;
+  top: calc((60vh / 2) - (163px / 2));
+  text-align: center;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    top: calc((60vh / 2) - (259px / 2));
+  }
+`;
+
+const GraphNumber = styled.p`
+  position: relative;
+  color: yellow;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  font-family: Verdana;
+  font-size: 4rem;
+
+  margin: 1rem 0;
+
+  @media (min-width: 768px) {
+    margin: auto;
+    font-size: 6rem;
+
+    margin: 2rem 0;
+  }
+`;
+
+const GraphYear = styled.p`
+  position: relative;
+  color: yellow;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  font-family: Verdana;
+  font-size: 1.5rem;
+  margin: 0;
+
+  @media (min-width: 768px) {
+    font-size: 2rem;
+  }
 `;
 
 const StartContent = styled.div`
@@ -118,9 +162,22 @@ export default function Home() {
     counter > 0 && setTimeout(() => setCounter(counter - 1000), 1000);
   }, [counter]);
 
-  const content = (
+  const startContent = (
     <>
-      <EmptySpace />
+      <EmptySpace>
+        <Circle
+          maxVal={12}
+          progress={3.2}
+          lineWidth={30}
+          progressColor={"yellow"}
+          responsive={true}
+        />
+        <GraphText>
+          <GraphYear>2018/2019</GraphYear>
+          <GraphNumber>-3,2 %</GraphNumber>
+          <GraphYear>(Krävs -12 %)</GraphYear>
+        </GraphText>
+      </EmptySpace>
       <StartContent>
         <p>
           I <b>Sverige</b> måste utsläppen sluta helt om:{" "}
@@ -143,11 +200,11 @@ export default function Home() {
   return (
     <Layout>
       {background === 1 ? (
-        <IndustryBackgroundSection>{content}</IndustryBackgroundSection>
+        <IndustryBackgroundSection>{startContent}</IndustryBackgroundSection>
       ) : background === 2 ? (
-        <AviationBackgroundSection>{content}</AviationBackgroundSection>
+        <AviationBackgroundSection>{startContent}</AviationBackgroundSection>
       ) : (
-        <CarsBackgroundSection>{content}</CarsBackgroundSection>
+        <CarsBackgroundSection>{startContent}</CarsBackgroundSection>
       )}
 
       <section>
@@ -157,10 +214,10 @@ export default function Home() {
             Nedräkningen är baserad på Sveriges andel av den globala
             koldioxidbudgeten som vi kan släppa ut innan vi uppnår 1,5 graders
             uppvärmning. Tillsammans med siffror på Sveriges årliga utsläpp kan
-            man räkna fram hur mycket tid vi har kvar innan vi uppnått 1,5
-            graders uppvärmning. Dock så räknar man inte in internationellt flyg
-            eller sjöfart. Så nedräkningsklockan visar en överskattad tid vi har
-            kvar.
+            man räkna fram hur mycket tid vi har kvar att bli fossilfria innan
+            vi misslyckas med vår andel av 1,5 gradersmålet. Dock så räknar man
+            inte in internationellt flyg eller sjöfart. Så nedräkningsklockan
+            visar en överskattad tid vi har kvar.
           </p>
           <p>Källor:</p>
           <ul>
@@ -197,6 +254,23 @@ export default function Home() {
           </p>
         </ContentWrapper>
         <ContentWrapper>
+          <h2>Vad betyder cirkeln?</h2>
+          <p>
+            Den ifyllda delen av cirkeln representerar Sveriges senaste årliga
+            utsläppsminskning mot vad som krävs för att klara Parisavtalet (hela
+            cirkeln). Just nu behöver Sverige minska utsläppen med minst
+            <b> 12 %</b> per år, men siffran blir tuffare för varje år vi inte
+            uppnår det.
+          </p>
+        </ContentWrapper>
+        <ContentWrapper>
+          <h2>Vad händer om vi inte hinner stoppa utsläppen i tid?</h2>
+          <p>
+            Om Sverige har spenderat hela sin koldioxidbudget för att nå 1.5
+            gradersmålet börjar vi att gnaga på andra länders koldioxidbudgetar.
+          </p>
+        </ContentWrapper>
+        <ContentWrapper>
           <h2>Det är ont om tid. Är det inte kört?</h2>
           <p>
             Det är sant att det är ont om tid men det är inte omöjligt att
@@ -206,6 +280,28 @@ export default function Home() {
             förlita oss på att tekniken kommer rädda oss. Andra lösningar som
             kan minska utsläpp nu behövs.
           </p>
+        </ContentWrapper>
+        <ContentWrapper>
+          <h2>Vad kan JAG egentligen göra?</h2>
+          <p>
+            Du kan påverka mer än vad du tror. Från att minska dina egna utsläpp
+            till att påverka och förändra normer. Här kommer några förslag på
+            hur:
+          </p>
+          <ul>
+            <li>
+              <a href="https://www.wwf.se/klimat/det-har-kan-du-gora/">
+                <i>Det här kan du göra (Världsnaturfonden)</i>{" "}
+                <img src={linkSVG} alt="" />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.naturskyddsforeningen.se/agera-for-klimatet">
+                <i>10 saker du kan göra för klimatet (Naturskyddsföreningen)</i>{" "}
+                <img src={linkSVG} alt="" />
+              </a>
+            </li>
+          </ul>
         </ContentWrapper>
 
         <ContentWrapper style={{ textAlign: "center" }}>
