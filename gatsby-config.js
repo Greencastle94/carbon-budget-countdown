@@ -17,7 +17,10 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "G-XXXXXXXXXX",
+        trackingId: "G-PZ2G6LG6XF",
+        head: true,
+        anonymize: true,
+        respectDNT: true,
       },
     },
     {
@@ -32,5 +35,5 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
   ],
-  pathPrefix: "/carbon-budget-countdown",
+  // pathPrefix: "/carbon-budget-countdown",
 };
