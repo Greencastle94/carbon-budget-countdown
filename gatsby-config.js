@@ -10,10 +10,16 @@ module.exports = {
   /* Your site config here */
   siteMetadata: {
     title: `Klimatklockan`,
-    description: `Klockan tickar på och vi behöver göra mer ifall vi ska uppnå vår del av parisavtalet.`,
+    description: `Klockan tickar… Det är ett akut läge och Sverige behöver göra betydligt mer för att uppnå vår del av parisavtalet. Så går Sveriges kamp mot klimatkrisen.`,
     author: `Greencastle`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "G-XXXXXXXXXX",
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
