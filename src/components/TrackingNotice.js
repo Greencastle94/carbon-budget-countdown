@@ -55,11 +55,15 @@ export default function TrackingNotice() {
   if (!showNotification) {
     return null;
   } else {
-    window[`ga-disable-${process.env.GATSBY_GA_TRACKING_ID}`] = true;
+    if (typeof window === "object") {
+      window[`ga-disable-${process.env.GATSBY_GA_TRACKING_ID}`] = true;
+    }
   }
 
   function allowTracking() {
-    window[`ga-disable-${process.env.GATSBY_GA_TRACKING_ID}`] = false;
+    if (typeof window === "object") {
+      window[`ga-disable-${process.env.GATSBY_GA_TRACKING_ID}`] = false;
+    }
     setCookie(TRACKING_PERMISSION_TOKEN, 1, 365);
     setShowNotification(false);
   }
