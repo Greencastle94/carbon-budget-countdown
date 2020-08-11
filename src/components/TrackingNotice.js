@@ -21,6 +21,10 @@ const StyledTrackingNotice = styled.div`
     font-size: 12px;
     min-width: 220px;
 
+    &:hover {
+      background-color: #dbdb00;
+    }
+
     @media (min-width: 768px) {
       margin: 0;
       margin-left: 16px;
