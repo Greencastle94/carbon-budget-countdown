@@ -63,6 +63,7 @@ export default function TrackingNotice() {
   function allowTracking() {
     if (typeof window === "object") {
       window[`ga-disable-${process.env.GATSBY_GA_TRACKING_ID}`] = false;
+      window.location.reload();
     }
     setCookie(TRACKING_PERMISSION_TOKEN, 1, 365);
     setShowNotification(false);
