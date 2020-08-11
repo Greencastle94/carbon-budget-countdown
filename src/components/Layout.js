@@ -1,12 +1,16 @@
 import React from "react";
 import SEO from "../components/seo";
-import "./Layout.css";
+import TrackingNotice from "../components/TrackingNotice";
+import "../global.css";
 
 export default function Layout({ children }) {
   return (
     <>
       <SEO />
-      <main>{children}</main>
+      <main>
+        {children}
+        <TrackingNotice />
+      </main>
     </>
   );
 }

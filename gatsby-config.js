@@ -4,6 +4,9 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 
+require("dotenv").config({
+  path: `.env`,
+});
 const path = require(`path`);
 
 module.exports = {
@@ -17,7 +20,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "G-PZ2G6LG6XF",
+        trackingId: process.env.GATSBY_GA_TRACKING_ID,
         head: true,
         anonymize: true,
         respectDNT: true,
@@ -35,5 +38,5 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
   ],
-  // pathPrefix: "/carbon-budget-countdown",
+  pathPrefix: "/carbon-budget-countdown",
 };
