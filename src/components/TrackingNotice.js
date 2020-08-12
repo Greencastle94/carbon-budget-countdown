@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { getCookie, setCookie } from "../utils/cookie";
+import { Link } from "gatsby";
 
 const StyledTrackingNotice = styled.div`
   box-sizing: border-box;
@@ -28,6 +29,7 @@ const StyledTrackingNotice = styled.div`
     @media (min-width: 768px) {
       margin: 0;
       margin-left: 16px;
+      font-size: 16px;
     }
   }
 `;
@@ -78,8 +80,9 @@ export default function TrackingNotice() {
       <TrackingNoticeContent>
         <CookieText>
           Jag använder cookies på hemsidan för att kunna förbättra upplevelsen
-          för er, besökarna. Genom att surfa vidare godkänner du att jag
-          använder cookies. <a href=" ">Läs mer om cookies</a>
+          för er, besökarna. Genom att klicka på den gula knappen godkänner du
+          att jag använder cookies.{" "}
+          <Link to="/cookie-policy">Läs mer om cookies</Link>
         </CookieText>
         <button onClick={allowTracking}>Jag förstår</button>
       </TrackingNoticeContent>
