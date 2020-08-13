@@ -2,8 +2,9 @@ import React from "react";
 import styled from "@emotion/styled";
 // Components
 import Layout from "../components/Layout";
-import ContentWrapper from "../components/ContentWrapper";
 import Circle from "../components/Circle";
+import ExternalLink from "../components/ExternalLink";
+import ContentWrapper from "../components/ContentWrapper";
 import IndustryBackgroundSection from "../components/BackgroundSection/IndustryBackgroundSection";
 import AviationBackgroundSection from "../components/BackgroundSection/AviationBackgroundSection";
 import CarsBackgroundSection from "../components/BackgroundSection/CarsBackgroundSection";
@@ -12,6 +13,7 @@ import downArrowSVG from "../../static/down-arrow.svg";
 import linkSVG from "../../static/link.svg";
 // Functions
 import getRandomInt from "../utils/getRandomInt";
+import scrollIntoView from "../utils/scrollIntoView";
 
 const EmptySpace = styled.div`
   height: 60vh;
@@ -95,7 +97,12 @@ const Countdown = styled.p`
   }
 `;
 
-const ReadMore = styled.div`
+const ReadMore = styled.a`
+  color: white;
+  &:hover {
+    text-decoration: none;
+  }
+
   width: 100vw;
   position: absolute;
   bottom: 0;
@@ -189,7 +196,7 @@ export default function Home() {
         } min, ${timeLeft.seconds} sek`}</Countdown>
         <p>om vi ska uppnå vår del av Parisavtalet.</p>
 
-        <ReadMore>
+        <ReadMore onClick={() => scrollIntoView("#FAQ-start")}>
           <p>Läs mer</p>
           <img src={downArrowSVG} alt="" />
         </ReadMore>
@@ -209,7 +216,7 @@ export default function Home() {
 
       <section>
         <ContentWrapper>
-          <h2>Var kommer siffrorna ifrån?</h2>
+          <h2 id="FAQ-start">Var kommer siffrorna ifrån?</h2>
           <p>
             Nedräkningen är baserad på Sveriges andel av den globala
             koldioxidbudgeten som vi kan släppa ut innan vi uppnår 1,5 graders
@@ -222,20 +229,18 @@ export default function Home() {
           <p>Källor:</p>
           <ul>
             <li>
-              <a href="https://www.naturvardsverket.se/Sa-mar-miljon/Klimat-och-luft/Klimat/Tre-satt-att-berakna-klimatpaverkande-utslapp/Kvartals--och-preliminara-arsvisa-vaxthusgasutslapp/">
-                <i>Kvartals- och preliminära årsvisa växthusgasutsläpp</i>{" "}
-                <img src={linkSVG} alt="" />
-              </a>
+              <ExternalLink href="https://www.naturvardsverket.se/Sa-mar-miljon/Klimat-och-luft/Klimat/Tre-satt-att-berakna-klimatpaverkande-utslapp/Kvartals--och-preliminara-arsvisa-vaxthusgasutslapp/">
+                <i>Kvartals- och preliminära årsvisa växthusgasutsläpp</i>
+              </ExternalLink>
             </li>
             <li>
-              <a href="https://www.tandfonline.com/doi/full/10.1080/14693062.2020.1728209">
+              <ExternalLink href="https://www.tandfonline.com/doi/full/10.1080/14693062.2020.1728209">
                 <i>
                   A factor of two: how the mitigation plans of ‘climate
                   progressive’ nations fall far short of Paris-compliant
                   pathways
-                </i>{" "}
-                <img src={linkSVG} alt="" />
-              </a>
+                </i>
+              </ExternalLink>
             </li>
           </ul>
         </ContentWrapper>
@@ -248,9 +253,9 @@ export default function Home() {
             uppvärmning.
           </p>
           <p>
-            <a href="https://en.wikipedia.org/wiki/Emissions_budget">
-              Läs mer här <img src={linkSVG} alt="" />
-            </a>
+            <ExternalLink href="https://en.wikipedia.org/wiki/Emissions_budget">
+              Läs mer här
+            </ExternalLink>
           </p>
         </ContentWrapper>
         <ContentWrapper>
@@ -290,16 +295,14 @@ export default function Home() {
           </p>
           <ul>
             <li>
-              <a href="https://www.wwf.se/klimat/det-har-kan-du-gora/">
-                <i>Det här kan du göra (Världsnaturfonden)</i>{" "}
-                <img src={linkSVG} alt="" />
-              </a>
+              <ExternalLink href="https://www.wwf.se/klimat/det-har-kan-du-gora/">
+                <i>Det här kan du göra (Världsnaturfonden)</i>
+              </ExternalLink>
             </li>
             <li>
-              <a href="https://www.naturskyddsforeningen.se/agera-for-klimatet">
-                <i>10 saker du kan göra för klimatet (Naturskyddsföreningen)</i>{" "}
-                <img src={linkSVG} alt="" />
-              </a>
+              <ExternalLink href="https://www.naturskyddsforeningen.se/agera-for-klimatet">
+                <i>10 saker du kan göra för klimatet (Naturskyddsföreningen)</i>
+              </ExternalLink>
             </li>
           </ul>
         </ContentWrapper>
