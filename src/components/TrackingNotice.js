@@ -58,6 +58,12 @@ export default function TrackingNotice() {
     !getCookie(TRACKING_PERMISSION_TOKEN)
   );
 
+  if (process.env.GATSBY_ACTIVE_ENV === "staging") {
+    if (typeof window === "object") {
+      window[`ga-disable-${process.env.GATSBY_GA_TRACKING_ID}`] = true;
+    }
+  }
+
   if (!showNotification) {
     return null;
   } else {
@@ -67,11 +73,13 @@ export default function TrackingNotice() {
   }
 
   function allowTracking() {
-    if (typeof window === "object") {
-      window[`ga-disable-${process.env.GATSBY_GA_TRACKING_ID}`] = false;
-      window.location.reload();
+    if (!process.env.GATSBY_ACTIVE_ENV === "staging") {
+      if (typeof window === "object") {
+        window[`ga-disable-${process.env.GATSBY_GA_TRACKING_ID}`] = false;
+        window.location.reload();
+      }
+      setCookie(TRACKING_PERMISSION_TOKEN, 1, 365);
     }
-    setCookie(TRACKING_PERMISSION_TOKEN, 1, 365);
     setShowNotification(false);
   }
 
