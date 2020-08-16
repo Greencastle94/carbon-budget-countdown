@@ -30,7 +30,7 @@ const GraphText = styled.div`
   }
 `;
 
-const GraphNumber = styled.p`
+const GraphMainText = styled.p`
   position: relative;
   color: yellow;
   text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
@@ -48,9 +48,9 @@ const GraphNumber = styled.p`
   }
 `;
 
-const GraphYear = styled.p`
+const GraphSubText = styled.p`
   position: relative;
-  color: yellow;
+  color: white;
   text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
   font-weight: bold;
   font-family: Verdana;
@@ -180,9 +180,9 @@ export default function Home() {
           responsive={true}
         />
         <GraphText>
-          <GraphYear>2018/2019</GraphYear>
-          <GraphNumber>-3,2 %</GraphNumber>
-          <GraphYear>(Krävs -12 %)</GraphYear>
+          <GraphSubText>2018/2019</GraphSubText>
+          <GraphMainText>-3,2 %</GraphMainText>
+          <GraphSubText>(Krävs -12 %)</GraphSubText>
         </GraphText>
       </EmptySpace>
       <StartContent>
