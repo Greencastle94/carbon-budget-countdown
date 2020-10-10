@@ -283,7 +283,7 @@ export default function Home() {
             handlingar av oss alla. Som politiker, företag eller individ. Ny
             teknik behövs men på den tidshorisont vi tittar på så kan vi inte
             förlita oss på att tekniken kommer rädda oss. Andra lösningar som
-            kan minska utsläpp nu behövs.
+            kan minska utsläppen nu behövs.
           </p>
         </ContentWrapper>
         <ContentWrapper>
