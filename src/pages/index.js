@@ -264,8 +264,8 @@ export default function Home() {
             Den ifyllda delen av cirkeln representerar Sveriges senaste årliga
             utsläppsminskning mot vad som krävs för att klara Parisavtalet (hela
             cirkeln). Just nu behöver Sverige minska utsläppen med minst
-            <b> 12 %</b> per år, men siffran blir tuffare för varje år vi inte
-            uppnår det.
+            <b> 12 %</b> per år, men siffran blir tuffare för varje år vi inte lyckas
+            uppnå det.
           </p>
         </ContentWrapper>
         <ContentWrapper>
