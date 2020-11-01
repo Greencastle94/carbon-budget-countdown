@@ -58,7 +58,7 @@ export default function TrackingNotice() {
     !getCookie(TRACKING_PERMISSION_TOKEN)
   );
 
-  if (process.env.GATSBY_ACTIVE_ENV === "staging") {
+  if (process.env.GATSBY_ACTIVE_ENV === "stage") {
     if (typeof window === "object") {
       window[`ga-disable-${process.env.GATSBY_GA_TRACKING_ID}`] = true;
     }
@@ -73,7 +73,7 @@ export default function TrackingNotice() {
   }
 
   function allowTracking() {
-    if (!process.env.GATSBY_ACTIVE_ENV === "staging") {
+    if (!process.env.GATSBY_ACTIVE_ENV === "stage") {
       if (typeof window === "object") {
         window[`ga-disable-${process.env.GATSBY_GA_TRACKING_ID}`] = false;
         window.location.reload();
