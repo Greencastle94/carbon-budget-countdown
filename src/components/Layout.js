@@ -1,7 +1,7 @@
 import React from "react";
 import SEO from "./Seo";
 import { Helmet } from "react-helmet";
-import TrackingNotice from "../components/TrackingNotice";
+import TrackingNotice from "./TrackingNotice";
 import "../global.css";
 
 export default function Layout({ children }) {
