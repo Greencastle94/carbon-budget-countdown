@@ -2,9 +2,11 @@ import React from "react";
 import styled from "@emotion/styled";
 
 const CountdownWrapper = styled.div`
+  position: relative; // Move countdown in front of background circle
+
   height: 75%;
   width: 250px;
-  margin: auto;
+  margin: 0 auto auto;
   text-align: center;
 
   // Center vertically
@@ -42,7 +44,7 @@ const CURRENT_BUDGET = 370; // (MtCO2) post-2019
 const CURRENT_EMISSIONS = 49.8; // (MtCO2) preliminary numbers for 2019
 const START_DATE = new Date("Jan 1, 2020 00:00:00");
 
-export function Countdown() {
+export default function Countdown() {
   const [counter, setCounter] = React.useState(0);
   const [timeLeft, setTimeLeft] = React.useState({});
 
