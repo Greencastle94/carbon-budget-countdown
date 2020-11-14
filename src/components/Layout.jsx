@@ -2,6 +2,8 @@ import React from "react";
 import SEO from "./seo";
 import { Helmet } from "react-helmet";
 import TrackingNotice from "./TrackingNotice";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 import "../global.css";
 
 export default function Layout({ children }) {
@@ -18,10 +20,14 @@ export default function Layout({ children }) {
         />
       </Helmet>
       <SEO />
-      <main>
-        {children}
-        <TrackingNotice />
-      </main>
+      <Header />
+      <main>{children}</main>
+      <Footer>
+        <a href="#">Källor</a>
+        <a href="#">Om Klimatklockan</a>
+        <a href="#">Kontakt</a>
+      </Footer>
+      <TrackingNotice />
     </>
   );
 }
