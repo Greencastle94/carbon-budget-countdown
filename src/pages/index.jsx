@@ -21,12 +21,17 @@ export default function Home() {
   return (
     <Layout>
       <StartContent>
-        <Circle color="var(--primary-color)" size="50px" left="20%" top="10%" />
         <Circle
           color="var(--primary-color)"
-          size="350px"
-          left="100%"
-          top="10%"
+          size={`${50}px`}
+          left={`${20}%`}
+          top={`${10}%`}
+        />
+        <Circle
+          color="var(--primary-color)"
+          size={`${350}px`}
+          left={`${100}%`}
+          top={`${10}%`}
         />
         <Countdown />
         <CountdownText>
@@ -36,7 +41,7 @@ export default function Home() {
 
       <ContentWrapper>
         <h2>Vad händer när tiden är slut?</h2>
-        <p>
+        <p style={{ margin: "0" }}>
           Enligt Paris-avtalet som Sverige har förbundit sig till att följa
           lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Enligt
@@ -48,7 +53,7 @@ export default function Home() {
 
       <ContentWrapper center>
         <h2>Hur räknar vi ut tiden?</h2>
-        <p>
+        <p style={{ margin: "0" }}>
           Vi har utgått från totalen av hur mycket vi har kvar enligt Sveriges
           åtagande till Paris-avtalet. Och dragit av motsvarande vad Sverige
           spenderat förra året.
@@ -57,7 +62,7 @@ export default function Home() {
 
       <ContentWrapper dark center>
         <h2>Vi kan stoppa klockan</h2>
-        <p>
+        <p style={{ margin: "0" }}>
           Genom att minska våra utsläpp kan vi förlänga tiden vi har på oss, och
           tillslut, stoppa klockan. Hur kan vi göra detta? Jo genom lorem ipsum
           dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -78,7 +83,7 @@ export default function Home() {
 
       <ContentWrapper>
         <h2>Är det inte kört redan?</h2>
-        <p>
+        <p style={{ margin: "0" }}>
           Visst kan det kännas så ibland… Alternativet att inte göra allt för
           att lösa det skulle däremot vara så förördande att det inte kan vara
           ett alternativt. Du kan påverka mer än vad du tror. Från att minska

@@ -27,9 +27,24 @@ const Content = styled.div`
 export default function Footer({ children }) {
   return (
     <StyledFooter>
-      <Circle color="var(--secondary-color)" size="1000px" left="50%" top="0" />
-      <Circle color="var(--primary-color)" size="50px" left="20%" top="25%" />
-      <Circle color="var(--primary-color)" size="350px" left="100%" top="25%" />
+      <Circle
+        color="var(--secondary-color)"
+        size={`${1000}px`}
+        left={`${50}%`}
+        top={`${0}%`}
+      />
+      <Circle
+        color="var(--primary-color)"
+        size={`${50}px`}
+        left={`${20}%`}
+        top={`${25}%`}
+      />
+      <Circle
+        color="var(--primary-color)"
+        size={`${350}px`}
+        left={`${100}%`}
+        top={`${25}%`}
+      />
       <Content>{children}</Content>
     </StyledFooter>
   );
