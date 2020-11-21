@@ -69,6 +69,12 @@ export default function Home() {
           åtagande till Paris-avtalet. Och dragit av motsvarande vad Sverige
           spenderat förra året.
         </p>
+
+        <Chart
+          currentEmissions={CURRENT_EMISSIONS}
+          currentYear={CURRENT_YEAR}
+          currentBudget={CURRENT_BUDGET}
+        />
       </ContentWrapper>
 
       <ContentWrapper dark center>
