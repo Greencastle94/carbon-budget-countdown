@@ -39,19 +39,18 @@ const HourMinSec_Labels = styled.p`
   margin: 0;
 `;
 
-// GLOBAL CONSTANTS
-const CURRENT_BUDGET = 370; // (MtCO2) post-2019
-const CURRENT_EMISSIONS = 49.8; // (MtCO2) preliminary numbers for 2019
-const START_DATE = new Date("Jan 1, 2020 00:00:00");
-
-export default function Countdown() {
+export default function Countdown({
+  currentBudget,
+  currentEmissions,
+  startDate,
+}) {
   const [counter, setCounter] = React.useState(0);
   const [timeLeft, setTimeLeft] = React.useState({});
 
   // Initial calculations
   React.useEffect(() => {
-    const millisecondsLeft = (CURRENT_BUDGET / CURRENT_EMISSIONS) * 31556952000;
-    const then = START_DATE.getTime() + millisecondsLeft;
+    const millisecondsLeft = (currentBudget / currentEmissions) * 31556952000;
+    const then = startDate.getTime() + millisecondsLeft;
     const now = new Date().getTime();
     setCounter(then - now);
   }, []);

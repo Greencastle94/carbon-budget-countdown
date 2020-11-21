@@ -1,13 +1,20 @@
 import React from "react";
 import styled from "@emotion/styled";
 // Components
-import Button from "../components/Button";
 import Card from "../components/Card";
-import Layout from "../components/Layout";
+import Chart from "../components/Chart";
+import Button from "../components/Button";
 import Circle from "../components/Circle";
+import Layout from "../components/Layout";
 import Countdown from "../components/Countdown";
 import CountdownText from "../components/CountdownText";
 import ContentWrapper from "../components/ContentWrapper";
+
+// GLOBAL CONSTANTS
+const CURRENT_BUDGET = 370; // (MtCO2) post-2019
+const CURRENT_EMISSIONS = 49.8; // (MtCO2) preliminary numbers for 2019
+const CURRENT_YEAR = 2019;
+const START_DATE = new Date("Jan 1, 2020 00:00:00");
 
 export default function Home() {
   const StartContent = styled.div`
@@ -33,7 +40,11 @@ export default function Home() {
           left={`${100}%`}
           top={`${10}%`}
         />
-        <Countdown />
+        <Countdown
+          currentBudget={CURRENT_BUDGET}
+          currentEmissions={CURRENT_EMISSIONS}
+          startDate={START_DATE}
+        />
         <CountdownText>
           Tid kvar tills Sveriges koldioxidbudget är slut.
         </CountdownText>
