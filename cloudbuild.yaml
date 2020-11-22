@@ -5,6 +5,9 @@ steps:
   # Build
   - name: "gcr.io/cloud-builders/npm"
     args: ["run", "build"]
+    env:
+      - "GATSBY_ACTIVE_ENV=$BRANCH_NAME"
+      - "GATSBY_GA_TRACKING_ID=UA-175010330-1"
   # Deploy
   - name: gcr.io/$_PROJECT_ID/firebase
     args: ["deploy", "--project=$_PROJECT_ID", "--only=hosting"]
