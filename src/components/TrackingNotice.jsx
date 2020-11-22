@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { getCookie, setCookie } from "../utils/cookie";
+import { ENV_STAGE } from "../constants";
 import { Link } from "gatsby";
 
 const StyledTrackingNotice = styled.div`
@@ -58,7 +59,7 @@ export default function TrackingNotice() {
     !getCookie(TRACKING_PERMISSION_TOKEN)
   );
 
-  if (process.env.GATSBY_ACTIVE_ENV === "stage") {
+  if (process.env.GATSBY_ACTIVE_ENV === ENV_STAGE) {
     if (typeof window === "object") {
       window[`ga-disable-${process.env.GATSBY_GA_TRACKING_ID}`] = true;
     }
@@ -73,7 +74,7 @@ export default function TrackingNotice() {
   }
 
   function allowTracking() {
-    if (!process.env.GATSBY_ACTIVE_ENV === "stage") {
+    if (!process.env.GATSBY_ACTIVE_ENV === ENV_STAGE) {
       if (typeof window === "object") {
         window[`ga-disable-${process.env.GATSBY_GA_TRACKING_ID}`] = false;
         window.location.reload();
