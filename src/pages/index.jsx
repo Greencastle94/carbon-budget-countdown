@@ -2,12 +2,13 @@ import React from "react";
 import styled from "@emotion/styled";
 // Components
 import Card from "../components/Card";
-import Chart from "../components/Chart";
+import BudgetCharts from "../components/Charts/BudgetCharts";
 import Button from "../components/Button";
 import Circle from "../components/Circle";
 import Layout from "../components/Layout";
-import Countdown from "../components/Countdown";
-import CountdownText from "../components/CountdownText";
+import Timeline from "../components/Charts/Timeline";
+import Countdown from "../components/Countdown/Countdown";
+import CountdownText from "../components/Countdown/CountdownText";
 import ContentWrapper from "../components/ContentWrapper";
 
 // GLOBAL CONSTANTS
@@ -70,9 +71,15 @@ export default function Home() {
           spenderat förra året.
         </p>
 
-        <Chart
+        <BudgetCharts
           currentEmissions={CURRENT_EMISSIONS}
           currentYear={CURRENT_YEAR}
+          currentBudget={CURRENT_BUDGET}
+        />
+        <Timeline
+          startDate={START_DATE}
+          currentEmissions={CURRENT_EMISSIONS}
+          currentYear={new Date().getFullYear()}
           currentBudget={CURRENT_BUDGET}
         />
       </ContentWrapper>
