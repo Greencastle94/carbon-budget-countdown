@@ -2,7 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import { VictoryBar } from "victory";
 
-const ChartH3 = styled.h3`
+const DescriptionH3 = styled.h3`
   font-size: 16px;
   font-weight: normal;
   font-family: var(--font-heading);
@@ -10,30 +10,30 @@ const ChartH3 = styled.h3`
   margin-bottom: 24px;
 `;
 
-const ChartP = styled.p`
+const DescriptionP = styled.p`
   font-size: 14px;
   font-family: var(--font-heading);
   color: var(--font-color-paragraph);
 `;
 
-const StyledChartDescription = styled.div`
+const StyledDescription = styled.div`
   text-align: left;
   position: absolute;
   top: ${props => `${props.position}px`};
 `;
 
-const ChartDescription = ({ children, position, number }) => {
+const Description = ({ children, position, number }) => {
   return (
-    <StyledChartDescription position={position}>
-      <ChartH3>{children}</ChartH3>
-      <ChartP>{`${(number * 1000000).toLocaleString("se-SE", {
+    <StyledDescription position={position}>
+      <DescriptionH3>{children}</DescriptionH3>
+      <DescriptionP>{`${(number * 1000000).toLocaleString("se-SE", {
         minimumFractionDigits: 0,
-      })} ton`}</ChartP>
-    </StyledChartDescription>
+      })} ton`}</DescriptionP>
+    </StyledDescription>
   );
 };
 
-const ChartContainer = styled.div`
+const Container = styled.div`
   position: relative;
   padding: 24px 0;
   margin: 36px 0;
@@ -45,14 +45,14 @@ export default function Chart({
   currentBudget,
 }) {
   return (
-    <ChartContainer>
-      <ChartDescription position={-20} number={currentBudget}>
+    <Container>
+      <Description position={-20} number={currentBudget}>
         Total kvarstående Co2-buget:
-      </ChartDescription>
-      <ChartDescription
+      </Description>
+      <Description
         position={70}
         number={currentEmissions}
-      >{`Sveriges Co2-utsläpp ${currentYear}:`}</ChartDescription>
+      >{`Sveriges Co2-utsläpp ${currentYear}:`}</Description>
       <VictoryBar
         data={[currentEmissions, currentBudget]}
         horizontal
@@ -71,6 +71,6 @@ export default function Chart({
           },
         }}
       />
-    </ChartContainer>
+    </Container>
   );
 }

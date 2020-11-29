@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
+import { getMilliSecondsLeftOfBudget } from "../../utils/utils";
 
 const CountdownWrapper = styled.div`
   position: relative; // Move countdown in front of background circle
@@ -49,7 +50,10 @@ export default function Countdown({
 
   // Initial calculations
   React.useEffect(() => {
-    const millisecondsLeft = (currentBudget / currentEmissions) * 31556952000;
+    const millisecondsLeft = getMilliSecondsLeftOfBudget(
+      currentBudget,
+      currentEmissions
+    );
     const then = startDate.getTime() + millisecondsLeft;
     const now = new Date().getTime();
     setCounter(then - now);

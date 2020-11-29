@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import arrowImg from "../../static/down-arrow.svg";
+import arrowImg from "../../../static/down-arrow.svg";
 
 const StyledCountdownText = styled.div`
   text-align: center;
