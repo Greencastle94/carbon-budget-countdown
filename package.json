@@ -14,7 +14,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "stage": "gatsby clean && gatsby build && firebase deploy -P stage",
     "deploy": "gatsby clean && gatsby build && firebase deploy -P prod",
-    "convert": "csvtojson data/csv/'${npm_config_filename}'.csv > data/'${npm_config_filename}'.json" // TODO: Add cmd line argument
+    "convert": "csvtojson data/csv/'${npm_config_filename}'.csv > data/'${npm_config_filename}'.json"
   },
   "dependencies": {
     "@emotion/core": "^10.1.1",
