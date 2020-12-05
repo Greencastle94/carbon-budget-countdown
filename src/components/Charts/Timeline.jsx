@@ -79,8 +79,9 @@ export default function Chart({
         height={10}
         padding={{ top: 5, right: 0, bottom: 5, left: 0 }}
       >
-        {yearSteps.map(year => (
+        {yearSteps.map((year, i) => (
           <VictoryBar
+            key={i}
             data={[currentEmissions]}
             horizontal
             height={10}
@@ -101,8 +102,8 @@ export default function Chart({
         ))}
       </VictoryStack>
       <YearSteps>
-        {yearSteps.map(year => (
-          <Year>{year}</Year>
+        {yearSteps.map((year, i) => (
+          <Year key={i}>{year}</Year>
         ))}
       </YearSteps>
     </Container>
