@@ -15,6 +15,8 @@ const darkTheme = css`
 `;
 
 const StyledContentWrapper = styled.div`
+  position: relative;
+  overflow: hidden;
   padding: 50px 16px;
 
   ${props => props.center && centeringText}

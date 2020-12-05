@@ -11,6 +11,7 @@ const StyledCircle = styled.div`
   transform: translateX(-50%);
   left: ${props => props.left};
   top: ${props => props.top};
+  z-index: -1;
 `;
 
 export default function Circle({ color, size, left, top }) {

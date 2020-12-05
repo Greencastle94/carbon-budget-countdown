@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-// Components
+// COMPONENTS
 import Card from "../components/Card";
 import BudgetCharts from "../components/Charts/BudgetCharts";
 import Button from "../components/Button";
@@ -10,6 +10,9 @@ import Timeline from "../components/Charts/Timeline";
 import Countdown from "../components/Countdown/Countdown";
 import CountdownText from "../components/Countdown/CountdownText";
 import ContentWrapper from "../components/ContentWrapper";
+// DATA
+import seaLevelRiseData from "../../data/havsnivå.json";
+import averageYearTempData from "../../data/temperatur.json";
 
 // GLOBAL CONSTANTS
 const CURRENT_BUDGET = 370; // (MtCO2) post-2019
@@ -95,14 +98,24 @@ export default function Home() {
       </ContentWrapper>
 
       <ContentWrapper>
+        <Circle
+          color="var(--primary-color)"
+          size={`${450}px`}
+          left={`${100}%`}
+          top={`${32}%`}
+        />
         <h2>Klimateffekterna i Sverige</h2>
         <p>
           Konsekvenserna är redan märkbara, och för att få en helhetsbild över
-          vart vi är påväg kan man titta på trender över flera faktorer.
+          vart vi är påväg kan man titta på trender över flera indikatorer.
         </p>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
+        <Card data={averageYearTempData} unit="°C">
+          Medeltemperatur
+        </Card>
+        <Card data={seaLevelRiseData} unit="cm">
+          Havsnivå
+        </Card>
+        <Card unit="dagar">Antal snödagar</Card>
       </ContentWrapper>
 
       <ContentWrapper>
