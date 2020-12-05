@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import { Link } from "gatsby";
 import Layout from "../components/Layout";
 import ContentWrapper from "../components/ContentWrapper";
-import leftArrowSVG from "../../static/left-arrow.svg";
+import backArrowImg from "../../static/arrow-left.svg";
 
 const BackLink = styled(Link)`
   display: flex;
@@ -29,7 +29,7 @@ export default function CookiePolicy() {
   return (
     <Layout>
       <BackLink to="/">
-        <img src={leftArrowSVG} alt="" />
+        <img src={backArrowImg} alt="" />
         <b>Tillbaka</b>
       </BackLink>
       <ContentWrapper>
