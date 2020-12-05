@@ -3,10 +3,6 @@ import styled from "@emotion/styled";
 import { VictoryBar } from "victory";
 
 const DescriptionH3 = styled.h3`
-  font-size: 16px;
-  font-weight: normal;
-  font-family: var(--font-heading);
-  color: var(--font-color-heading);
   margin-bottom: 24px;
 `;
 
@@ -46,11 +42,11 @@ export default function Chart({
 }) {
   return (
     <Container>
-      <Description position={-20} number={currentBudget}>
+      <Description position={-4} number={currentBudget}>
         Total kvarstående Co2-buget:
       </Description>
       <Description
-        position={70}
+        position={86}
         number={currentEmissions}
       >{`Sveriges Co2-utsläpp ${currentYear}:`}</Description>
       <VictoryBar

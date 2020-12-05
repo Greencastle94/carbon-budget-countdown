@@ -24,6 +24,14 @@ h2 {
   letter-spacing: -1px;
 }
 
+h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: normal;
+  font-family: var(--font-heading);
+  color: var(--font-color-heading);
+}
+
 p {
   margin: 0;
   margin-bottom: 2rem;
