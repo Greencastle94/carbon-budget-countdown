@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { VictoryBar } from "victory";
+import { VictoryArea } from "victory";
 import { average } from "../utils/utils";
 import trendArrowUp from "../../static/arrow-trend-up.svg";
 
@@ -19,11 +19,16 @@ const StyledCard = styled.div`
     width: 40%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+
+    p {
+      margin-bottom: 24px;
+    }
+
+    img {
+      margin-right: auto;
+    }
   }
 `;
-
-const BAR_WIDTH = 20;
 
 export default function Card({
   children,
@@ -55,27 +60,15 @@ export default function Card({
           <p>{`${valueChange > 0 ? "+" : ""} ${valueChange} ${unit}`}</p>
           <img src={trendArrowUp} alt="" />
         </div>
-        <VictoryBar
+        <VictoryArea
           data={processedData}
           x="year"
           y="value"
-          barWidth={BAR_WIDTH}
           height={150}
-          padding={{
-            top: 0,
-            right: BAR_WIDTH / 2,
-            bottom: 0,
-            left: BAR_WIDTH / 2,
-          }}
-          cornerRadius={{
-            topLeft: BAR_WIDTH / 2,
-            topRight: BAR_WIDTH / 2,
-            bottomLeft: BAR_WIDTH / 2,
-            bottomRight: BAR_WIDTH / 2,
-          }}
+          padding={0}
           style={{
             data: {
-              fill: "var(--primary-color)",
+              fill: "var(--secondary-color)",
             },
           }}
         />
