@@ -57,21 +57,18 @@ export default function Home() {
       <ContentWrapper>
         <h2>Vad händer när tiden är slut?</h2>
         <p style={{ margin: "0" }}>
-          Enligt Paris-avtalet som Sverige har förbundit sig till att följa
-          lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Enligt
-          Paris-avtalet som Sverige har förbundit sig till att följa lorem ipsum
-          dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua.
+          Inget kommer plötsligt att hända om tiden tar slut men Sverige har då
+          misslyckats att fullfölja sitt åtagande till Paris-avtalet.
         </p>
       </ContentWrapper>
 
       <ContentWrapper center>
         <h2>Hur räknar vi ut tiden?</h2>
         <p style={{ margin: "0" }}>
-          Vi har utgått från totalen av hur mycket vi har kvar enligt Sveriges
-          åtagande till Paris-avtalet. Och dragit av motsvarande vad Sverige
-          spenderat förra året.
+          Vi har utgått från totalen av hur mycket Sverige har kvar att släppa
+          ut innan vi misslyckats med vårt åtagande till Paris-avtalet. Och
+          dragit av motsvarande vad Sverige släppte ut senaste året med
+          tillgänglig data.
         </p>
 
         <BudgetCharts
@@ -91,9 +88,7 @@ export default function Home() {
         <h2>Vi kan stoppa klockan</h2>
         <p style={{ margin: "0" }}>
           Genom att minska våra utsläpp kan vi förlänga tiden vi har på oss, och
-          tillslut, stoppa klockan. Hur kan vi göra detta? Jo genom lorem ipsum
-          dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua.
+          tillslut, stoppa klockan innan tiden tagit slut.
         </p>
       </ContentWrapper>
 
@@ -124,7 +119,7 @@ export default function Home() {
           Visst kan det kännas så ibland… Alternativet att inte göra allt för
           att lösa det skulle däremot vara så förördande att det inte kan vara
           ett alternativt. Du kan påverka mer än vad du tror. Från att minska
-          dina egna utsläpp till att påverka och förändra normer.
+          dina egna utsläpp till att påverka andra och förändra normer.
         </p>
       </ContentWrapper>
 
