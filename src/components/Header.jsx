@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import flagImg from "../../static/flag.svg";
+import { Link } from "gatsby";
 
 const StyledHeader = styled.header`
   display: flex;
@@ -29,9 +30,9 @@ const StyledHeader = styled.header`
 export default function Header() {
   return (
     <StyledHeader>
-      <div>
+      <Link to="/">
         <h1>Klimatklockan</h1>
-      </div>
+      </Link>
       <div className="text">
         <img src={flagImg} alt="" />
         <p>Sverige</p>
