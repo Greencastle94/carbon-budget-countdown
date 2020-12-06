@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import { getCookie, setCookie } from "../utils/cookie";
 import { ENV_STAGE } from "../constants";
 import { Link } from "gatsby";
+import Button from "./Button";
 
 const StyledTrackingNotice = styled.div`
   box-sizing: border-box;
@@ -10,34 +11,14 @@ const StyledTrackingNotice = styled.div`
   bottom: 0;
   width: 100%;
   padding: 16px;
-  background: #999;
-
-  button {
-    margin-top: 16px;
-    padding: 8px;
-    background-color: yellow;
-    border: 0;
-    border-radius: 10px;
-    box-shadow: 0px 3px 10px 3px rgba(0, 0, 0, 0.2);
-
-    font-size: 12px;
-    min-width: 220px;
-
-    &:hover {
-      background-color: #dbdb00;
-    }
-
-    @media (min-width: 768px) {
-      margin: 0;
-      margin-left: 16px;
-      font-size: 16px;
-    }
-  }
+  background: var(--primary-color);
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
 `;
 
 const TrackingNoticeContent = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   max-width: 1140px;
 
   @media (min-width: 768px) {
@@ -48,8 +29,9 @@ const TrackingNoticeContent = styled.div`
 `;
 
 const CookieText = styled.p`
+  color: var(--font-colot-heading);
   flex: 0 1 70%;
-  margin: 0;
+  margin: 0 0 1rem;
 `;
 
 const TRACKING_PERMISSION_TOKEN = "allowGA";
@@ -93,7 +75,7 @@ export default function TrackingNotice() {
           att jag använder cookies.{" "}
           <Link to="/cookie-policy">Läs mer om cookies</Link>
         </CookieText>
-        <button onClick={allowTracking}>Jag förstår</button>
+        <Button onClick={allowTracking}>Jag förstår</Button>
       </TrackingNoticeContent>
     </StyledTrackingNotice>
   );
