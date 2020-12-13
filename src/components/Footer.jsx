@@ -21,6 +21,10 @@ const Content = styled.div`
     color: var(--primary-color);
     text-decoration: none;
     margin-bottom: 16px;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `;
 

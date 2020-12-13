@@ -17,6 +17,12 @@ const StyledHeader = styled.header`
     margin: auto;
   }
 
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
   .text {
     display: flex;
 
