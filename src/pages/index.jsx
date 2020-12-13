@@ -58,7 +58,8 @@ export default function Home() {
         <h2>Vad händer när tiden är slut?</h2>
         <p style={{ margin: "0" }}>
           Inget kommer plötsligt att hända om tiden tar slut men Sverige har då
-          misslyckats att fullfölja sitt åtagande till Paris-avtalet.
+          misslyckats att fullfölja sitt åtagande till Paris-avtalet. Vi börjar
+          då att gnaga på andra länders koldioxidbudgetar.
         </p>
       </ContentWrapper>
 
@@ -66,7 +67,7 @@ export default function Home() {
         <h2>Hur räknar vi ut tiden?</h2>
         <p style={{ margin: "0" }}>
           Vi har utgått från totalen av hur mycket Sverige har kvar att släppa
-          ut innan vi misslyckats med vårt åtagande till Paris-avtalet. Och
+          ut innan vi misslyckats med vårt åtagande till Paris-avtalet. Sedan
           dragit av motsvarande vad Sverige släppte ut senaste året med
           tillgänglig data.
         </p>
