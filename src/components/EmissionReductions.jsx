@@ -29,7 +29,7 @@ const UpperContainer = styled.div`
 const BottomContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-left: ${props => props.percentage - 6 + "%"};
+  margin-left: ${props => props.percentage + "%"};
   margin-top: 8px;
 `;
 
