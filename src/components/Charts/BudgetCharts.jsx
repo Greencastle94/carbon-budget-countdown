@@ -46,7 +46,7 @@ export default function Chart({
         Total kvarstående Co2-buget:
       </Description>
       <Description
-        position={86}
+        position={70}
         number={currentEmissions}
       >{`Sveriges Co2-utsläpp ${currentYear}:`}</Description>
       <VictoryBar

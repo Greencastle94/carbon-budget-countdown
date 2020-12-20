@@ -2,22 +2,26 @@ import React from "react";
 import styled from "@emotion/styled";
 // COMPONENTS
 import Card from "../components/Card";
-import BudgetCharts from "../components/Charts/BudgetCharts";
 import Button from "../components/Button";
 import Circle from "../components/Circle";
 import Layout from "../components/Layout";
+import CardContainer from "../components/CardContainer";
 import Timeline from "../components/Charts/Timeline";
-import Countdown from "../components/Countdown/Countdown";
-import CountdownText from "../components/Countdown/CountdownText";
 import ContentWrapper from "../components/ContentWrapper";
+import Countdown from "../components/StartSection/Countdown";
+import BudgetCharts from "../components/Charts/BudgetCharts";
+import EmissionReductions from "../components/EmissionReductions";
+import CountdownText from "../components/StartSection/CountdownText";
+import ScrollDownArrow from "../components/StartSection/ScrollDownArrow";
 // DATA
 import seaLevelRiseData from "../../data/havsnivå.json";
 import averageYearTempData from "../../data/temperatur.json";
 
 // GLOBAL CONSTANTS
 const CURRENT_BUDGET = 370; // (MtCO2) post-2019
-const CURRENT_EMISSIONS = 49.8; // (MtCO2) preliminary numbers for 2019
+const YEARLY_EMISSIONS = { "2018": 52.2, "2019": 50.9 }; // MtCO2
 const CURRENT_YEAR = 2019;
+const CURRENT_EMISSIONS = YEARLY_EMISSIONS[CURRENT_YEAR];
 const START_DATE = new Date("Jan 1, 2020 00:00:00");
 
 export default function Home() {
@@ -52,9 +56,17 @@ export default function Home() {
         <CountdownText>
           Tid kvar tills Sveriges koldioxidbudget är slut.
         </CountdownText>
+        <ScrollDownArrow />
       </StartContent>
 
       <ContentWrapper>
+        <EmissionReductions
+          currentYear={CURRENT_YEAR}
+          yearlyEmissions={YEARLY_EMISSIONS}
+        />
+      </ContentWrapper>
+
+      <ContentWrapper dark center>
         <h2>Vad händer när tiden är slut?</h2>
         <p style={{ margin: "0" }}>
           Inget kommer plötsligt att hända om tiden tar slut men Sverige har då
@@ -105,13 +117,15 @@ export default function Home() {
           Konsekvenserna är redan märkbara, och för att få en helhetsbild över
           vart vi är påväg kan man titta på trender över flera indikatorer.
         </p>
-        <Card data={averageYearTempData} unit="°C">
-          Medeltemperatur
-        </Card>
-        <Card data={seaLevelRiseData} unit="cm">
-          Havsnivå
-        </Card>
-        <Card unit="dagar">Antal snödagar</Card>
+        <CardContainer>
+          <Card data={averageYearTempData} unit="°C">
+            Medeltemperatur
+          </Card>
+          <Card data={seaLevelRiseData} unit="cm">
+            Havsnivå
+          </Card>
+          <Card unit="dagar">Antal snödagar</Card>
+        </CardContainer>
       </ContentWrapper>
 
       <ContentWrapper>

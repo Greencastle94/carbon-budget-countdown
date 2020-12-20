@@ -39,7 +39,11 @@ const YearSteps = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 8px;
-  margin-left: 20px; // Needs to be adjusted manually on timeline changes
+  margin-left: 4%; // Needs to be adjusted manually on timeline changes
+
+  @media (min-width: 768px) {
+    margin-left: 11%;
+  }
 `;
 
 const Year = styled.p`
