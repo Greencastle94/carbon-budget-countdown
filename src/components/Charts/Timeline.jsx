@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { VictoryBar, VictoryStack } from "victory";
+import Bar from "../Charts/Bar";
 import { getMilliSecondsLeftOfBudget } from "../../utils/utils";
 
 const MONTHS = [
@@ -33,6 +33,11 @@ const Description = styled.p`
     display: flex;
     text-decoration: underline;
   }
+`;
+
+const Graph = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;
 
 const YearSteps = styled.div`
@@ -69,6 +74,8 @@ export default function Chart({
     .fill(0)
     .map((step, i) => currentYear + 1 + i);
 
+  const barWidth = (currentEmissions / currentBudget) * 100;
+
   return (
     <Container>
       <Description>
@@ -79,32 +86,12 @@ export default function Chart({
           }, ${doomsYear}`}
         </span>
       </Description>
-      <VictoryStack
-        height={10}
-        padding={{ top: 5, right: 0, bottom: 5, left: 0 }}
-      >
+
+      <Graph>
         {yearSteps.map((year, i) => (
-          <VictoryBar
-            key={i}
-            data={[currentEmissions]}
-            horizontal
-            height={10}
-            barWidth={10}
-            padding={{ top: 5, right: 0, bottom: 5, left: 0 }}
-            cornerRadius={{
-              topLeft: 5,
-              topRight: 5,
-              bottomLeft: 5,
-              bottomRight: 5,
-            }}
-            style={{
-              data: {
-                fill: "var(--secondary-color)",
-              },
-            }}
-          />
+          <Bar width={barWidth} />
         ))}
-      </VictoryStack>
+      </Graph>
       <YearSteps>
         {yearSteps.map((year, i) => (
           <Year key={i}>{year}</Year>

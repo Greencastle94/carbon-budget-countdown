@@ -1,72 +1,55 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { VictoryBar } from "victory";
+import Bar from "../Charts/Bar";
 
-const DescriptionH3 = styled.h3`
-  margin-bottom: 24px;
+const Container = styled.div`
+  margin: 36px 0;
 `;
 
-const DescriptionP = styled.p`
+const GraphContainer = styled.div`
+  text-align: left;
+  margin-bottom: 32px;
+`;
+
+const Title = styled.h3`
+  margin-bottom: 8px;
+`;
+
+const Description = styled.p`
+  margin-top: 8px;
   font-size: 14px;
   font-family: var(--font-heading);
   color: var(--font-color-paragraph);
 `;
 
-const StyledDescription = styled.div`
-  text-align: left;
-  position: absolute;
-  top: ${props => `${props.position}px`};
-`;
-
-const Description = ({ children, position, number }) => {
+const Graph = ({ children, number, width }) => {
   return (
-    <StyledDescription position={position}>
-      <DescriptionH3>{children}</DescriptionH3>
-      <DescriptionP>{`${(number * 1000000).toLocaleString("se-SE", {
+    <GraphContainer>
+      <Title>{children}</Title>
+      <Bar width={width} />
+      <Description>{`${(number * 1000000).toLocaleString("se-SE", {
         minimumFractionDigits: 0,
-      })} ton`}</DescriptionP>
-    </StyledDescription>
+      })} ton`}</Description>
+    </GraphContainer>
   );
 };
 
-const Container = styled.div`
-  position: relative;
-  padding: 24px 0;
-  margin: 36px 0;
-`;
-
-export default function Chart({
+export default function BudgetCharts({
   currentEmissions,
   currentYear,
   currentBudget,
 }) {
+  const smallBarWidth = (currentEmissions / currentBudget) * 100;
+
   return (
     <Container>
-      <Description position={-4} number={currentBudget}>
+      <Graph number={currentBudget} width={100}>
         Total kvarstående Co2-buget:
-      </Description>
-      <Description
-        position={70}
+      </Graph>
+      <Graph
         number={currentEmissions}
-      >{`Sveriges Co2-utsläpp ${currentYear}:`}</Description>
-      <VictoryBar
-        data={[currentEmissions, currentBudget]}
-        horizontal
-        height={130}
-        barWidth={10}
-        padding={{ top: 5, right: 0, bottom: 5, left: 0 }}
-        cornerRadius={{
-          topLeft: 5,
-          topRight: 5,
-          bottomLeft: 5,
-          bottomRight: 5,
-        }}
-        style={{
-          data: {
-            fill: "var(--secondary-color)",
-          },
-        }}
-      />
+        width={smallBarWidth}
+      >{`Sveriges Co2-utsläpp ${currentYear}:`}</Graph>
     </Container>
   );
 }
