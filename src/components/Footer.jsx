@@ -5,7 +5,7 @@ import Circle from "../components/Circle";
 const StyledFooter = styled.footer`
   position: relative;
   overflow: hidden;
-  height: 500px;
+  height: 200px;
   padding-top: 48px;
 `;
 
@@ -33,7 +33,7 @@ export default function Footer({ children }) {
     <StyledFooter>
       <Circle
         color="var(--secondary-color)"
-        size={`${1000}px`}
+        size={`${200}vw`}
         left={`${50}%`}
         top={`${0}%`}
       />
@@ -41,13 +41,13 @@ export default function Footer({ children }) {
         color="var(--primary-color)"
         size={`${50}px`}
         left={`${20}%`}
-        top={`${25}%`}
+        top={`${35}%`}
       />
       <Circle
         color="var(--primary-color)"
         size={`${350}px`}
         left={`${100}%`}
-        top={`${25}%`}
+        top={`${35}%`}
       />
       <Content>{children}</Content>
     </StyledFooter>
