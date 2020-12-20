@@ -14,19 +14,29 @@ const darkTheme = css`
   }
 `;
 
-const StyledContentWrapper = styled.div`
+const Background = styled.div`
   position: relative;
   overflow: hidden;
-  padding: 50px 16px;
 
-  ${props => props.center && centeringText}
   ${props => props.dark && darkTheme}
+  ${props => props.center && centeringText}
+`;
+
+const Content = styled.div`
+  padding: 50px var(--side-margin-mobile);
+  margin: auto;
+  max-width: 1140px;
+
+  @media (min-width: 768px) {
+    padding-right: 0;
+    padding-left: 0;
+  }
 `;
 
 export default function ContentWrapper({ center, dark, style, children }) {
   return (
-    <StyledContentWrapper center={center} dark={dark} style={style}>
-      {children}
-    </StyledContentWrapper>
+    <Background center={center} dark={dark} style={style}>
+      <Content>{children}</Content>
+    </Background>
   );
 }

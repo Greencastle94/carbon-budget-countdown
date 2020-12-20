@@ -8,6 +8,9 @@
   /* FONTS */
   --font-heading: "Roboto Mono", monospace;
   --font-paragraph: "Noto Sans", sans-serif;
+
+  /* MARGIN */
+  --side-margin-mobile: 16px;
 }
 
 body {
@@ -34,7 +37,7 @@ h3 {
 
 p {
   margin: 0;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   font-size: 16px;
   line-height: 1.5;
   font-family: var(--font-paragraph);
