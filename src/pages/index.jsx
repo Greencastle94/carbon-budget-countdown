@@ -13,8 +13,6 @@ import StartSection from "../components/StartSection/StartSection";
 // DATA
 import seaLevelRiseData from "../../data/havsnivå.json";
 import averageYearTempData from "../../data/temperatur.json";
-// CONSTANTS
-// import {} from "../constants";
 
 export default function Home() {
   return (
