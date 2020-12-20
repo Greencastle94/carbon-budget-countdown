@@ -75,7 +75,7 @@ export default function TrackingNotice() {
       <TrackingNoticeContent>
         <CookieText>
           Jag använder cookies på hemsidan för att kunna förbättra upplevelsen
-          för er, besökarna. Genom att klicka på den gula knappen godkänner du
+          för er, besökarna. Genom att klicka på den blå knappen godkänner du
           att jag använder cookies.{" "}
           <Link to="/cookie-policy">Läs mer om cookies</Link>
         </CookieText>
