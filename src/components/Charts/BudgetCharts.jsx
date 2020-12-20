@@ -1,6 +1,11 @@
 import React from "react";
 import styled from "@emotion/styled";
 import Bar from "../Charts/Bar";
+import {
+  CURRENT_EMISSIONS,
+  CURRENT_DATA_YEAR,
+  CURRENT_BUDGET,
+} from "../../constants";
 
 const Container = styled.div`
   margin: 36px 0;
@@ -34,22 +39,18 @@ const Graph = ({ children, number, width }) => {
   );
 };
 
-export default function BudgetCharts({
-  currentEmissions,
-  currentYear,
-  currentBudget,
-}) {
-  const smallBarWidth = (currentEmissions / currentBudget) * 100;
+export default function BudgetCharts() {
+  const smallBarWidth = (CURRENT_EMISSIONS / CURRENT_BUDGET) * 100;
 
   return (
     <Container>
-      <Graph number={currentBudget} width={100}>
+      <Graph number={CURRENT_BUDGET} width={100}>
         Total kvarstående Co2-buget:
       </Graph>
       <Graph
-        number={currentEmissions}
+        number={CURRENT_EMISSIONS}
         width={smallBarWidth}
-      >{`Sveriges Co2-utsläpp ${currentYear}:`}</Graph>
+      >{`Sveriges Co2-utsläpp ${CURRENT_DATA_YEAR}:`}</Graph>
     </Container>
   );
 }

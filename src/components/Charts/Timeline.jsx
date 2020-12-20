@@ -2,7 +2,9 @@ import React from "react";
 import styled from "@emotion/styled";
 import Bar from "../Charts/Bar";
 import { getMilliSecondsLeftOfBudget } from "../../utils/utils";
+import { START_DATE, CURRENT_EMISSIONS, CURRENT_BUDGET } from "../../constants";
 
+const CURRENT_YEAR = new Date().getFullYear();
 const MONTHS = [
   "Januari",
   "Februari",
@@ -57,24 +59,19 @@ const Year = styled.p`
   margin: 0;
 `;
 
-export default function Chart({
-  startDate,
-  currentEmissions,
-  currentYear,
-  currentBudget,
-}) {
+export default function Chart() {
   const millisecondsLeft = getMilliSecondsLeftOfBudget(
-    currentBudget,
-    currentEmissions
+    CURRENT_BUDGET,
+    CURRENT_EMISSIONS
   );
-  const doomsDate = new Date(startDate.getTime() + millisecondsLeft);
+  const doomsDate = new Date(START_DATE.getTime() + millisecondsLeft);
   const doomsYear = doomsDate.getFullYear();
 
-  const yearSteps = new Array(doomsYear - currentYear)
+  const yearSteps = new Array(doomsYear - CURRENT_YEAR)
     .fill(0)
-    .map((step, i) => currentYear + 1 + i);
+    .map((step, i) => CURRENT_YEAR + 1 + i);
 
-  const barWidth = (currentEmissions / currentBudget) * 100;
+  const barWidth = (CURRENT_EMISSIONS / CURRENT_BUDGET) * 100;
 
   return (
     <Container>

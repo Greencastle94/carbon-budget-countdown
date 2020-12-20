@@ -1,70 +1,29 @@
 import React from "react";
-import styled from "@emotion/styled";
 // COMPONENTS
 import Card from "../components/Card";
 import Button from "../components/Button";
 import Circle from "../components/Circle";
 import Layout from "../components/Layout";
-import CardContainer from "../components/CardContainer";
 import Timeline from "../components/Charts/Timeline";
+import CardContainer from "../components/CardContainer";
 import ContentWrapper from "../components/ContentWrapper";
-import Countdown from "../components/StartSection/Countdown";
 import BudgetCharts from "../components/Charts/BudgetCharts";
 import EmissionReductions from "../components/EmissionReductions";
-import CountdownText from "../components/StartSection/CountdownText";
-import ScrollDownArrow from "../components/StartSection/ScrollDownArrow";
+import StartSection from "../components/StartSection/StartSection";
 // DATA
 import seaLevelRiseData from "../../data/havsnivå.json";
 import averageYearTempData from "../../data/temperatur.json";
-
-// GLOBAL CONSTANTS
-const CURRENT_BUDGET = 370; // (MtCO2) post-2019
-const YEARLY_EMISSIONS = { "2018": 52.2, "2019": 50.9 }; // MtCO2
-const CURRENT_YEAR = 2019;
-const CURRENT_EMISSIONS = YEARLY_EMISSIONS[CURRENT_YEAR];
-const START_DATE = new Date("Jan 1, 2020 00:00:00");
+// CONSTANTS
+// import {} from "../constants";
 
 export default function Home() {
-  const StartSection = styled.section`
-    position: relative;
-    overflow: hidden;
-    height: calc(100vh - 44px);
-    display: flex;
-    flex-direction: column;
-  `;
-
   return (
     <Layout>
-      <StartSection>
-        <Circle
-          color="var(--primary-color)"
-          size={`${50}px`}
-          left={`${20}%`}
-          top={`${10}%`}
-        />
-        <Circle
-          color="var(--primary-color)"
-          size={`${350}px`}
-          left={`${100}%`}
-          top={`${10}%`}
-        />
-        <Countdown
-          currentBudget={CURRENT_BUDGET}
-          currentEmissions={CURRENT_EMISSIONS}
-          startDate={START_DATE}
-        />
-        <CountdownText>
-          Tid kvar tills Sveriges koldioxidbudget är slut.
-        </CountdownText>
-        <ScrollDownArrow />
-      </StartSection>
+      <StartSection />
 
       <section>
         <ContentWrapper>
-          <EmissionReductions
-            currentYear={CURRENT_YEAR}
-            yearlyEmissions={YEARLY_EMISSIONS}
-          />
+          <EmissionReductions />
         </ContentWrapper>
 
         <ContentWrapper dark center>
@@ -85,17 +44,8 @@ export default function Home() {
             tillgänglig data.
           </p>
 
-          <BudgetCharts
-            currentEmissions={CURRENT_EMISSIONS}
-            currentYear={CURRENT_YEAR}
-            currentBudget={CURRENT_BUDGET}
-          />
-          <Timeline
-            startDate={START_DATE}
-            currentEmissions={CURRENT_EMISSIONS}
-            currentYear={new Date().getFullYear()}
-            currentBudget={CURRENT_BUDGET}
-          />
+          <BudgetCharts />
+          <Timeline />
         </ContentWrapper>
 
         <ContentWrapper dark center>

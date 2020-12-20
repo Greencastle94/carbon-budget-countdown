@@ -1,5 +1,10 @@
 import React from "react";
 import styled from "@emotion/styled";
+import {
+  YEARLY_EMISSIONS,
+  CURRENT_DATA_YEAR,
+  NECESSARY_REDUCTION_RATE,
+} from "../constants";
 
 const Container = styled.div`
   p {
@@ -42,13 +47,12 @@ const YearlyEmissions = styled.div`
   background-color: var(--secondary-color);
 `;
 
-const NECESSARY_REDUCTION_RATE = -12;
-
-export default function Chart({ currentYear, yearlyEmissions }) {
+export default function Chart() {
   let percentage =
     Math.round(
-      ((yearlyEmissions[currentYear - 1] - yearlyEmissions[currentYear]) /
-        yearlyEmissions[currentYear - 1]) *
+      ((YEARLY_EMISSIONS[CURRENT_DATA_YEAR - 1] -
+        YEARLY_EMISSIONS[CURRENT_DATA_YEAR]) /
+        YEARLY_EMISSIONS[CURRENT_DATA_YEAR - 1]) *
         100 *
         10
     ) / 10;
@@ -58,8 +62,8 @@ export default function Chart({ currentYear, yearlyEmissions }) {
     <Container>
       <UpperContainer>
         <p className="current">{`Utsläppsminskning ${
-          currentYear - 1
-        }/${currentYear}`}</p>
+          CURRENT_DATA_YEAR - 1
+        }/${CURRENT_DATA_YEAR}`}</p>
         <p className="target">{`${NECESSARY_REDUCTION_RATE} %`}</p>
       </UpperContainer>
       <BigBar>
