@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "@emotion/styled";
 import arrowImg from "../../../static/arrow-down.svg";
 
 export default function ScrollDownArrow() {
