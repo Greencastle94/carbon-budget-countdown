@@ -32,6 +32,10 @@ const CookieText = styled.p`
   color: var(--font-colot-heading);
   flex: 0 1 70%;
   margin: 0 0 1rem;
+
+  @media (min-width: 768px) {
+    margin-right: 32px;
+  }
 `;
 
 const TRACKING_PERMISSION_TOKEN = "allowGA";
