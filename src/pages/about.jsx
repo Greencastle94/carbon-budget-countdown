@@ -37,8 +37,9 @@ export default function AboutPage() {
         </p>
         <p>
           Klimatklockan handlar om klimatet och det genomsyrade hela arbetet med
-          hemsidan. Den ligger på en server som drivs av grön el och mängden
-          data som behöver skickas över nätet har minimerats så mycket det går.
+          hemsidan. Den ligger på en server med lågt koldioxidavtryck och
+          mängden data som behöver skickas över nätet har minimerats så mycket
+          det går.
           <br />
           <a
             style={{ marginBottom: "1rem" }}
