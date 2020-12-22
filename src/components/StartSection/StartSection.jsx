@@ -26,7 +26,7 @@ export default function StartSection() {
       <Circle
         color="var(--primary-color)"
         size={`${350}px`}
-        left={`${100}%`}
+        left={`${93}%`}
         top={`${10}%`}
       />
       <Countdown
