@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
+import logo from "../../static/klimatklockan.svg";
 import flagImg from "../../static/flag.svg";
 import { Link } from "gatsby";
 
@@ -37,7 +38,10 @@ export default function Header() {
   return (
     <StyledHeader>
       <Link to="/">
-        <h1>Klimatklockan</h1>
+        <div className="text">
+          <img src={logo} alt="" />
+          <h1>Klimatklockan</h1>
+        </div>
       </Link>
       <div className="text">
         <img src={flagImg} alt="" />
