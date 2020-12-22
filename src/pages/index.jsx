@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // COMPONENTS
 import Card from "../components/Card";
 import Button from "../components/Button";
@@ -10,11 +10,14 @@ import ContentWrapper from "../components/ContentWrapper";
 import BudgetCharts from "../components/Charts/BudgetCharts";
 import EmissionReductions from "../components/EmissionReductions";
 import StartSection from "../components/StartSection/StartSection";
+import SocialShareModal from "../components/SocialShareModal";
 // DATA
 import seaLevelRiseData from "../../data/havsnivå.json";
 import averageYearTempData from "../../data/temperatur.json";
 
 export default function Home() {
+  const [isActiveSocialShareModal, setActiveSocialShareModal] = useState(false);
+
   return (
     <Layout>
       <StartSection />
@@ -81,21 +84,30 @@ export default function Home() {
           <h2>Är det inte kört redan?</h2>
           <p style={{ margin: "0" }}>
             Visst kan det kännas så ibland… Alternativet att inte göra allt för
-            att lösa det skulle däremot vara så förördande att det inte kan vara
-            ett alternativt. Du kan påverka mer än vad du tror. Från att minska
-            dina egna utsläpp till att påverka andra och förändra normer.
+            att lösa det skulle däremot vara så förödande att det inte kan vara
+            ett alternativ. Du kan påverka mer än vad du tror. Från att minska
+            dina egna utsläpp till att påverka andra, förändra normer eller
+            varför inte påverka politiken eller företaget du jobbar på.
           </p>
         </ContentWrapper>
 
         <ContentWrapper center style={{ marginBottom: "30px" }}>
           <h2>Håll konversationen vid liv!</h2>
           <p>
-            Vi kan bara göra skillnad om vi förstår utmaningen, och den korta
+            Vi kan bara göra skillnad om vi förstår utmaningen och den korta
             begränsade tiden vi har på oss.
           </p>
-          <Button>Dela sidan</Button>
+          <Button
+            onClick={() => setActiveSocialShareModal(!isActiveSocialShareModal)}
+          >
+            Dela sidan
+          </Button>
         </ContentWrapper>
       </section>
+      <SocialShareModal
+        isActive={isActiveSocialShareModal}
+        setActive={setActiveSocialShareModal}
+      />
     </Layout>
   );
 }

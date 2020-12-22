@@ -12,6 +12,7 @@ const path = require(`path`);
 module.exports = {
   /* Your site config here */
   siteMetadata: {
+    siteUrl: `https://klimatklockan.se`,
     title: `Klimatklockan`,
     description: `Klockan tickar… Det är ett akut läge och Sverige behöver göra betydligt mer för att uppnå vår del av parisavtalet. Så går Sveriges kamp mot klimatkrisen.`,
     author: `Greencastle`,
