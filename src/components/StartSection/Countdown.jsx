@@ -6,7 +6,6 @@ const CountdownWrapper = styled.div`
   position: relative; // Move countdown in front of background circle
 
   height: 75%;
-  width: 250px;
   margin: 0 auto auto;
   text-align: center;
 
@@ -22,6 +21,10 @@ const YearDay = styled.p`
   font-family: var(--font-heading);
   margin: 0;
   margin-bottom: 5px;
+
+  @media (min-width: 768px) {
+    font-size: 30px;
+  }
 `;
 
 const HourMinSec = styled.p`
@@ -30,6 +33,10 @@ const HourMinSec = styled.p`
   font-family: var(--font-heading);
   letter-spacing: 3px;
   margin: 0;
+
+  @media (min-width: 768px) {
+    font-size: 69px;
+  }
 `;
 
 const HourMinSec_Labels = styled.p`
@@ -38,6 +45,10 @@ const HourMinSec_Labels = styled.p`
   font-family: var(--font-heading);
   word-spacing: 1.5rem;
   margin: 0;
+
+  @media (min-width: 768px) {
+    font-size: 21px;
+  }
 `;
 
 export default function Countdown({
