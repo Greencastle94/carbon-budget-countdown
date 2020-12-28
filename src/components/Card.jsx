@@ -54,7 +54,7 @@ export default function Card({
 
   return (
     <StyledCard>
-      <h3>{children}</h3>
+      <h3>{`${children} (sedan ${processedData[0].year})`}</h3>
       <div className="row">
         <div className="column">
           <p>{`${valueChange > 0 ? "+" : ""} ${valueChange} ${unit}`}</p>

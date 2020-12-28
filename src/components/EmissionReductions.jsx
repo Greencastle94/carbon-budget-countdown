@@ -64,7 +64,7 @@ export default function Chart() {
         <p className="current">{`Utsläppsminskning ${
           CURRENT_DATA_YEAR - 1
         }/${CURRENT_DATA_YEAR}`}</p>
-        <p className="target">{`${NECESSARY_REDUCTION_RATE} %`}</p>
+        <p className="target">{`${NECESSARY_REDUCTION_RATE} % / år`}</p>
       </UpperContainer>
       <BigBar>
         <YearlyEmissions
