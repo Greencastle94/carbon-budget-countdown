@@ -45,12 +45,11 @@ export default function BudgetCharts() {
   return (
     <Container>
       <Graph number={CURRENT_BUDGET} width={100}>
-        Total kvarstående Co2-buget:
+        Total kvarstående CO<sub>2</sub>-buget:
       </Graph>
-      <Graph
-        number={CURRENT_EMISSIONS}
-        width={smallBarWidth}
-      >{`Sveriges Co2-utsläpp ${CURRENT_DATA_YEAR}:`}</Graph>
+      <Graph number={CURRENT_EMISSIONS} width={smallBarWidth}>
+        Sveriges CO<sub>2</sub>-utsläpp {CURRENT_DATA_YEAR}:
+      </Graph>
     </Container>
   );
 }
