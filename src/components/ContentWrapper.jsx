@@ -27,6 +27,16 @@ const Content = styled.div`
   margin: auto;
   max-width: 1140px;
 
+  > p,
+  h2 {
+    max-width: 700px;
+    margin: auto;
+  }
+
+  > h2 {
+    margin-bottom: 8px;
+  }
+
   @media (min-width: 768px) {
     padding-right: 0;
     padding-left: 0;
