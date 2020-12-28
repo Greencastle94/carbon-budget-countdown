@@ -52,6 +52,7 @@ const CloseIcon = styled.img`
   display: block;
   width: 24px;
   height: auto;
+  cursor: pointer;
 `;
 
 const IconRow = styled.div`
