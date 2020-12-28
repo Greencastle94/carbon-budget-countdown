@@ -1,6 +1,8 @@
 import React from "react";
 import arrowImg from "../../../static/arrow-down.svg";
 
+import { scrollIntoView } from "../../utils/utils";
+
 export default function ScrollDownArrow() {
   return (
     <img
@@ -9,9 +11,12 @@ export default function ScrollDownArrow() {
         display: "block",
         margin: "auto",
         marginBottom: "20px",
+        padding: "20px",
+        cursor: "pointer",
       }}
       src={arrowImg}
-      alt=""
+      alt="Arrow down icon"
+      onClick={() => scrollIntoView("#emission-reductions")}
     />
   );
 }

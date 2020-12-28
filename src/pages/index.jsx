@@ -22,7 +22,7 @@ export default function Home() {
     <Layout>
       <StartSection />
 
-      <section>
+      <section id="emission-reductions">
         <ContentWrapper>
           <EmissionReductions />
         </ContentWrapper>
