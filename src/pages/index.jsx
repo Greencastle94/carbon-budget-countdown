@@ -31,8 +31,9 @@ export default function Home() {
           <h2>Vad händer när tiden är slut?</h2>
           <p>
             Inget kommer plötsligt att hända om tiden tar slut men Sverige har
-            då misslyckats att fullfölja sitt åtagande till Paris-avtalet. Vi
-            börjar då att gnaga på andra länders koldioxidbudgetar.
+            då misslyckats att fullfölja sitt åtagande till Paris-avtalet, hålla
+            världen under 1,5 graders global uppvärmning. Vi börjar då att gnaga
+            på andra länders koldioxidbudgetar.
           </p>
         </ContentWrapper>
 
@@ -76,18 +77,17 @@ export default function Home() {
             <Card data={seaLevelRiseData} unit="cm">
               Havsnivå
             </Card>
-            <Card unit="dagar">Antal snödagar</Card>
           </CardContainer>
         </ContentWrapper>
 
         <ContentWrapper>
           <h2>Är det inte kört redan?</h2>
           <p>
-            Visst kan det kännas så ibland… Alternativet att inte göra allt för
-            att lösa det skulle däremot vara så förödande att det inte kan vara
-            ett alternativ. Du kan påverka mer än vad du tror. Från att minska
-            dina egna utsläpp till att påverka andra, förändra normer eller
-            varför inte påverka politiken eller företaget du jobbar på.
+            Nej, det är trots allt inte försent än men det bröjar brinna i
+            knutarna. Att inte göra allt för att lösa den här krisen kan inte
+            vara ett alternativ. Du kan påverka mer än vad du tror. Från att
+            minska dina egna utsläpp till att påverka andra, förändra normer
+            eller varför inte påverka politiken eller företaget du jobbar på.
           </p>
         </ContentWrapper>
 
