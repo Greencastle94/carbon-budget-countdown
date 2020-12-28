@@ -10,7 +10,6 @@ export default function ScrollDownArrow() {
         width: "20px",
         display: "block",
         margin: "auto",
-        marginBottom: "20px",
         padding: "20px",
         cursor: "pointer",
       }}
