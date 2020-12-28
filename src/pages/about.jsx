@@ -6,6 +6,12 @@ import ContentWrapper from "../components/ContentWrapper";
 
 const Container = styled.div`
   margin-bottom: 32px;
+
+  p {
+    max-width: 700px;
+    margin-right: auto;
+    margin-left: auto;
+  }
 `;
 
 export default function AboutPage() {
@@ -39,7 +45,7 @@ export default function AboutPage() {
             faktiskt ska kunna ta till sig det. En klimatklocka för Sverige är
             lättare att relatera och förhålla sig till. Det går inte att skjuta
             ansvaret till något annat land då det är Sveriges andel av
-            koldioxidbudgeten för åtagande till Parisavtalet. Att hålla sig
+            koldioxidbudgeten för åtagande till Parisavtalet. Att hålla världen
             under 1.5 graders global uppvärmning.
           </p>
           <p>
@@ -59,7 +65,7 @@ export default function AboutPage() {
 
         <Container>
           <h2>Vad är en koldioxidbudget?</h2>
-          <p style={{ margin: 0 }}>
+          <p style={{ marginBottom: 0 }}>
             Mängden koldioxid i atmosfären korrelerar med en viss genomsnittlig
             global temperatur. På så sätt kan man räkna fram ett tak för hur
             mycket koldioxid vi kan släppa ut innan vi når en viss global

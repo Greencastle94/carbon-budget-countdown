@@ -6,6 +6,12 @@ import ContentWrapper from "../components/ContentWrapper";
 
 const Container = styled.div`
   margin-bottom: 32px;
+
+  p {
+    max-width: 700px;
+    margin-right: auto;
+    margin-left: auto;
+  }
 `;
 
 export default function CookiePolicy() {
@@ -15,7 +21,7 @@ export default function CookiePolicy() {
       <ContentWrapper>
         <Container>
           <h2>Vad är Cookies?</h2>
-          <p style={{ margin: "0" }}>
+          <p>
             När du surfar på hemsidan och ger ditt godkännande så samlas
             uppgifter in via så kallade cookies. Cookies är en liten textfil som
             skickas från webbservern och sparas på din webbläsare eller enhet.

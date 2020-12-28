@@ -6,6 +6,12 @@ import ContentWrapper from "../components/ContentWrapper";
 
 const FAQ = styled.div`
   margin-bottom: 32px;
+
+  p {
+    max-width: 700px;
+    margin-right: auto;
+    margin-left: auto;
+  }
 `;
 
 export default function SourcesPage() {
@@ -30,8 +36,9 @@ export default function SourcesPage() {
           <p>
             I en vetenskaplig artikel skrev man om hur Storbritannien och
             Sverige ligger till med sitt åtagande till Parisavtalet genom att
-            titta på hittills beslutade policys. Koldioxidbudgeten för Sverige
-            som räknades fram i artikeln användes för att skapa Klimatklockan.
+            titta på hittills beslutade policys och mål. Koldioxidbudgeten för
+            Sverige som räknades fram i artikeln användes för att skapa
+            Klimatklockan.
             <br />
             <a href="https://www.tandfonline.com/doi/full/10.1080/14693062.2020.1728209">
               Länk till artikeln
