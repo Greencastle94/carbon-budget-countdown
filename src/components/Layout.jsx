@@ -25,6 +25,7 @@ export default function Layout({ children }) {
       <Footer>
         <a href="/about">Om Klimatklockan</a>
         <a href="/sources">Källor</a>
+        <p>Kontakt: klimatklockan@gmail.com</p>
       </Footer>
       <TrackingNotice />
     </>
