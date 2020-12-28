@@ -16,6 +16,7 @@ module.exports = {
     title: `Klimatklockan`,
     description: `Klockan tickar… Det är ett akut läge och Sverige behöver göra betydligt mer för att uppnå vår del av parisavtalet. Så går Sveriges kamp mot klimatkrisen.`,
     author: `Greencastle`,
+    image: "static/klimatklockan.svg",
   },
   plugins: [
     {
