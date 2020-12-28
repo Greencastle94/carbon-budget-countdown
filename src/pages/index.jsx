@@ -29,16 +29,16 @@ export default function Home() {
 
         <ContentWrapper dark center>
           <h2>Vad händer när tiden är slut?</h2>
-          <p style={{ margin: "0" }}>
+          <p>
             Inget kommer plötsligt att hända om tiden tar slut men Sverige har
             då misslyckats att fullfölja sitt åtagande till Paris-avtalet. Vi
             börjar då att gnaga på andra länders koldioxidbudgetar.
           </p>
         </ContentWrapper>
 
-        <ContentWrapper center>
+        <ContentWrapper>
           <h2>Hur räknar vi ut tiden?</h2>
-          <p style={{ margin: "0" }}>
+          <p>
             Vi har utgått från totalen av hur mycket Sverige har kvar att släppa
             ut innan vi misslyckats med vårt åtagande till Paris-avtalet. Sedan
             dragit av motsvarande vad Sverige släppte ut senaste året med
@@ -51,7 +51,7 @@ export default function Home() {
 
         <ContentWrapper dark center>
           <h2>Vi kan stoppa klockan</h2>
-          <p style={{ margin: "0" }}>
+          <p>
             Genom att minska våra utsläpp kan vi förlänga tiden vi har på oss,
             och tillslut, stoppa klockan innan tiden tagit slut.
           </p>
@@ -82,7 +82,7 @@ export default function Home() {
 
         <ContentWrapper>
           <h2>Är det inte kört redan?</h2>
-          <p style={{ margin: "0" }}>
+          <p>
             Visst kan det kännas så ibland… Alternativet att inte göra allt för
             att lösa det skulle däremot vara så förödande att det inte kan vara
             ett alternativ. Du kan påverka mer än vad du tror. Från att minska
@@ -93,7 +93,7 @@ export default function Home() {
 
         <ContentWrapper center style={{ marginBottom: "30px" }}>
           <h2>Håll konversationen vid liv!</h2>
-          <p>
+          <p style={{ marginBottom: "1rem" }}>
             Vi kan bara göra skillnad om vi förstår utmaningen och den korta
             begränsade tiden vi har på oss.
           </p>
