@@ -31,9 +31,9 @@ export default function Home() {
           <h2>Vad händer när tiden är slut?</h2>
           <p>
             Inget kommer plötsligt att hända om tiden tar slut men Sverige har
-            då misslyckats att fullfölja sitt åtagande till Paris-avtalet, hålla
-            världen under 1,5 graders global uppvärmning. Vi börjar då att gnaga
-            på andra länders koldioxidbudgetar.
+            då misslyckats att fullfölja sitt åtagande till Paris-avtalet, att
+            hålla världen under 1,5 graders global uppvärmning. Vi börjar då att
+            gnaga på andra länders koldioxidbudgetar.
           </p>
         </ContentWrapper>
 
@@ -98,6 +98,7 @@ export default function Home() {
             begränsade tiden vi har på oss.
           </p>
           <Button
+            isCTA
             onClick={() => setActiveSocialShareModal(!isActiveSocialShareModal)}
           >
             Dela sidan
