@@ -37,14 +37,14 @@ const BigBar = styled.div`
   position: relative;
   height: 10px;
   width: 100%;
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
 `;
 
 const YearlyEmissions = styled.div`
   position: absolute;
   height: 100%;
   width: ${props => props.percentage + "%"};
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
 `;
 
 export default function Chart() {

@@ -11,6 +11,10 @@ const StyledCard = styled.div`
   border-radius: 4px;
   box-shadow: 0 2px 8px 0 rgba(99, 99, 99, 0.2);
 
+  h3 {
+    color: var(--background-color);
+  }
+
   .row {
     display: flex;
   }
@@ -22,6 +26,7 @@ const StyledCard = styled.div`
 
     p {
       margin-bottom: 24px;
+      color: var(--secondary-color);
     }
 
     img {

@@ -16,7 +16,7 @@ const CountdownWrapper = styled.div`
 `;
 
 const YearDay = styled.p`
-  color: black;
+  color: var(--primary-color);
   font-size: 20px;
   font-family: var(--font-heading);
   margin: 0;
@@ -28,7 +28,7 @@ const YearDay = styled.p`
 `;
 
 const HourMinSec = styled.p`
-  color: black;
+  color: var(--primary-color);
   font-size: 46px;
   font-family: var(--font-heading);
   letter-spacing: 3px;
@@ -40,7 +40,7 @@ const HourMinSec = styled.p`
 `;
 
 const HourMinSec_Labels = styled.p`
-  color: black;
+  color: var(--primary-color);
   font-size: 14px;
   font-family: var(--font-heading);
   word-spacing: 1.5rem;

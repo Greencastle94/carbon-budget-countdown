@@ -9,8 +9,9 @@ const centeringText = css`
 const darkTheme = css`
   background-color: var(--primary-color);
 
+  h2,
   p {
-    color: var(--font-color-heading);
+    color: var(--background-color);
   }
 `;
 

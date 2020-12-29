@@ -8,6 +8,8 @@ const StyledBackButton = styled(Link)`
   margin: 2rem 16px 0;
   max-width: 1140px;
   font-family: var(--font-heading);
+  font-weight: bold;
+  color: var(--font-color-paragraph);
 
   &:hover {
     text-decoration: underline;
@@ -28,7 +30,7 @@ export default function BackButton({ to }) {
   return (
     <StyledBackButton to={to}>
       <img src={arrowImg} alt="" />
-      <b>Tillbaka</b>
+      Tillbaka
     </StyledBackButton>
   );
 }

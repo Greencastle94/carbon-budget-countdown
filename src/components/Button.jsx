@@ -6,20 +6,25 @@ const StyledButton = styled.button`
   height: 46px;
   border: none;
   border-radius: 32px;
-  background-color: #21245b;
+  background-color: ${props =>
+    props.isCTA ? "var(--CTA-color)" : "var(--secondary-color)"};
   cursor: pointer;
 
   // Text
-  color: #ffffff;
+  color: ${props => (props.isCTA ? "#ffffff" : "#ffffff")};
   font-size: 18px;
   font-family: var(--font-heading);
   letter-spacing: -0.9px;
 
   :hover {
-    background-color: #272b74;
+    background-color: ${props => (props.isCTA ? "#509e52" : "#1f1f1f")};
   }
 `;
 
-export default function Button({ children, onClick }) {
-  return <StyledButton onClick={onClick}>{children}</StyledButton>;
+export default function Button({ children, onClick, isCTA }) {
+  return (
+    <StyledButton onClick={onClick} isCTA={isCTA}>
+      {children}
+    </StyledButton>
+  );
 }

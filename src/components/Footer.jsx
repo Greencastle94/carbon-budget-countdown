@@ -17,7 +17,7 @@ const Content = styled.div`
   a {
     font-size: 16px;
     font-family: var(--font-heading);
-    color: var(--primary-color);
+    color: var(--background-color);
     text-decoration: none;
     margin: auto;
     margin-bottom: 16px;
@@ -28,7 +28,7 @@ const Content = styled.div`
   }
 
   p {
-    color: var(--primary-color);
+    color: var(--background-color);
   }
 `;
 
@@ -36,7 +36,7 @@ export default function Footer({ children }) {
   return (
     <StyledFooter>
       <Circle
-        color="var(--secondary-color)"
+        color="var(--primary-color)"
         size={`${200}vw`}
         left={`${50}%`}
         top={`${0}%`}

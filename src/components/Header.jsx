@@ -14,7 +14,7 @@ const StyledHeader = styled.header`
     font-size: 16px;
     font-weight: normal;
     font-family: var(--font-heading);
-    color: var(--font-color-header);
+    color: var(--font-color-paragraph);
     margin: auto;
   }
 

@@ -1,9 +1,11 @@
 :root {
   /* COLORS */
-  --primary-color: #f6eee2;
-  --secondary-color: #22225f;
-  --font-color-heading: #101518;
-  --font-color-paragraph: #935c37;
+  --primary-color: #f9dd00;
+  --secondary-color: #4f5a65;
+  --background-color: #000000;
+  --font-color-heading: #f9dd00;
+  --font-color-paragraph: #ffffff;
+  --CTA-color: #226ce0;
 
   /* FONTS */
   --font-heading: "Roboto Mono", monospace;
@@ -11,6 +13,10 @@
 
   /* MARGIN */
   --side-margin-mobile: 16px;
+}
+
+html {
+  background-color: var(--background-color);
 }
 
 body {

@@ -18,13 +18,13 @@ export default function StartSection() {
   return (
     <StyledStartSection>
       <Circle
-        color="var(--primary-color)"
+        color="var(--secondary-color)"
         size={`${50}px`}
         left={`${20}%`}
         top={`${10}%`}
       />
       <Circle
-        color="var(--primary-color)"
+        color="var(--secondary-color)"
         size={`${350}px`}
         left={`${93}%`}
         top={`${10}%`}

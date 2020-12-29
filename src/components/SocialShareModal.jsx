@@ -23,6 +23,10 @@ const Modal = styled.div`
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.2);
   padding: 0 var(--side-margin-mobile);
+
+  h2 {
+    color: var(--background-color);
+  }
 `;
 
 const Container = styled.div`
