@@ -20,6 +20,15 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: process.env.GATSBY_GA_TRACKING_ID,
+        head: true,
+        anonymize: true,
+        respectDNT: true,
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: "Klimatklockan",
@@ -27,15 +36,6 @@ module.exports = {
         background_color: "#6b37bf",
         display: "standalone",
         icon: "static/klimatklockan.svg",
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: process.env.GATSBY_GA_TRACKING_ID,
-        head: true,
-        anonymize: true,
-        respectDNT: true,
       },
     },
     {
