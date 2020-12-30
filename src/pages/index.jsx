@@ -83,7 +83,7 @@ export default function Home() {
         <ContentWrapper>
           <h2>Är det inte kört redan?</h2>
           <p>
-            Nej, det är trots allt inte försent än men det bröjar brinna i
+            Nej, det är trots allt inte försent än men det börjar brinna i
             knutarna. Att inte göra allt för att lösa den här krisen kan inte
             vara ett alternativ. Du kan påverka mer än vad du tror. Från att
             minska dina egna utsläpp till att påverka andra, förändra normer
