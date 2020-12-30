@@ -86,7 +86,7 @@ export default function Chart() {
 
       <Graph>
         {yearSteps.map((year, i) => (
-          <Bar width={barWidth} />
+          <Bar key={i} width={barWidth} />
         ))}
       </Graph>
       <YearSteps>
