@@ -45,6 +45,9 @@ export default function TrackingNotice() {
     !getCookie(TRACKING_PERMISSION_TOKEN)
   );
 
+  console.log("GATSBY_ACTIVE_ENV", process.env.GATSBY_ACTIVE_ENV);
+  console.log("GATSBY_GA_TRACKING_ID", process.env.GATSBY_GA_TRACKING_ID);
+
   if (process.env.GATSBY_ACTIVE_ENV === ENV_STAGE) {
     if (typeof window === "object") {
       window[`ga-disable-${process.env.GATSBY_GA_TRACKING_ID}`] = true;
