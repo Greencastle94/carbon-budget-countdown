@@ -1,24 +1,11 @@
 import React from "react";
 import styled from "@emotion/styled";
 import Bar from "../Charts/Bar";
-import { getMilliSecondsLeftOfBudget } from "../../utils/utils";
-import { START_DATE, CURRENT_EMISSIONS, CURRENT_BUDGET } from "../../constants";
-
-const CURRENT_YEAR = new Date().getFullYear();
-const MONTHS = [
-  "Januari",
-  "Februari",
-  "Mars",
-  "April",
-  "Maj",
-  "Juni",
-  "Juli",
-  "Augusti",
-  "September",
-  "Oktober",
-  "November",
-  "December",
-];
+import {
+  getMilliSecondsLeftOfBudget,
+  getCurrentBudget,
+} from "../../utils/utils";
+import { BUDGET_START_DATE, CURRENT_EMISSIONS, MONTHS } from "../../constants";
 
 const Container = styled.div`
   margin-top: 18px;
@@ -60,28 +47,27 @@ const Year = styled.p`
 `;
 
 export default function Chart() {
+  const currentYear = new Date().getFullYear();
   const millisecondsLeft = getMilliSecondsLeftOfBudget(
-    CURRENT_BUDGET,
+    getCurrentBudget(),
     CURRENT_EMISSIONS
   );
-  const doomsDate = new Date(START_DATE.getTime() + millisecondsLeft);
+  const doomsDate = new Date(
+    new Date(`Jan 1, ${currentYear} 00:00:00`).getTime() + millisecondsLeft
+  );
   const doomsYear = doomsDate.getFullYear();
 
-  const yearSteps = new Array(doomsYear - CURRENT_YEAR)
+  const yearSteps = new Array(doomsYear - currentYear)
     .fill(0)
-    .map((step, i) => CURRENT_YEAR + 1 + i);
+    .map((step, i) => currentYear + 1 + i);
 
-  const barWidth = (CURRENT_EMISSIONS / CURRENT_BUDGET) * 100;
+  const barWidth = (CURRENT_EMISSIONS / getCurrentBudget()) * 100;
 
   return (
     <Container>
       <Description>
-        Drar vi av lika mycket de kommande åren når vi ett slutdatum:
-        <span>
-          {`${doomsDate.getDate()} ${
-            MONTHS[doomsDate.getMonth()]
-          }, ${doomsYear}`}
-        </span>
+        Drar vi av lika mycket de kommande åren är budgeten slut:
+        <span>{`${MONTHS[doomsDate.getMonth()]} ${doomsYear}`}</span>
       </Description>
 
       <Graph>

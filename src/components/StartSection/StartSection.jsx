@@ -4,7 +4,8 @@ import Circle from "../Circle";
 import Countdown from "./Countdown";
 import CountdownText from "./CountdownText";
 import ScrollDownArrow from "./ScrollDownArrow";
-import { CURRENT_BUDGET, CURRENT_EMISSIONS, START_DATE } from "../../constants";
+import { getCurrentBudget } from "../../utils/utils";
+import { CURRENT_EMISSIONS, BUDGET_START_DATE } from "../../constants";
 
 export default function StartSection() {
   const StyledStartSection = styled.section`
@@ -30,9 +31,9 @@ export default function StartSection() {
         top={`${10}%`}
       />
       <Countdown
-        currentBudget={CURRENT_BUDGET}
+        currentBudget={getCurrentBudget()}
         currentEmissions={CURRENT_EMISSIONS}
-        startDate={START_DATE}
+        startDate={BUDGET_START_DATE}
       />
       <div>
         <CountdownText>
