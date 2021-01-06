@@ -33,7 +33,7 @@ export default function StartSection() {
       <Countdown
         currentBudget={getCurrentBudget()}
         currentEmissions={CURRENT_EMISSIONS}
-        startDate={BUDGET_START_DATE}
+        startDate={new Date(`Jan 1, ${new Date().getFullYear()} 00:00:00`)}
       />
       <div>
         <CountdownText>

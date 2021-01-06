@@ -5,7 +5,7 @@ import {
   getMilliSecondsLeftOfBudget,
   getCurrentBudget,
 } from "../../utils/utils";
-import { BUDGET_START_DATE, CURRENT_EMISSIONS, MONTHS } from "../../constants";
+import { CURRENT_EMISSIONS, MONTHS } from "../../constants";
 
 const Container = styled.div`
   margin-top: 18px;
