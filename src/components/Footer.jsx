@@ -30,6 +30,11 @@ const Content = styled.div`
   p {
     color: var(--background-color);
   }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export default function Footer({ children }) {

@@ -23,8 +23,10 @@ export default function Layout({ children }) {
       <Header />
       <main>{children}</main>
       <Footer>
-        <a href="/about">Om Klimatklockan</a>
-        <a href="/sources">Källor</a>
+        <nav>
+          <a href="/about">Om Klimatklockan</a>
+          <a href="/sources">Källor</a>
+        </nav>
         <p>Kontakt: klimatklockan@gmail.com</p>
       </Footer>
       <TrackingNotice />
