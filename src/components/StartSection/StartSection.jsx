@@ -5,7 +5,7 @@ import Countdown from "./Countdown";
 import CountdownText from "./CountdownText";
 import ScrollDownArrow from "./ScrollDownArrow";
 import { getCurrentBudget } from "../../utils/utils";
-import { CURRENT_EMISSIONS, BUDGET_START_DATE } from "../../constants";
+import { CURRENT_EMISSIONS } from "../../constants";
 
 export default function StartSection() {
   const StyledStartSection = styled.section`
