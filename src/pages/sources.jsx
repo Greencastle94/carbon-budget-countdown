@@ -7,7 +7,8 @@ import ContentWrapper from "../components/ContentWrapper";
 const FAQ = styled.div`
   margin-bottom: 32px;
 
-  p {
+  p,
+  h3 {
     max-width: 700px;
     margin-right: auto;
     margin-left: auto;
@@ -19,8 +20,11 @@ export default function SourcesPage() {
     <Layout>
       <BackButton to="/" />
       <ContentWrapper>
+        <h2>Källor</h2>
+        <br />
+
         <FAQ>
-          <h2>Sveriges årliga utsläpp</h2>
+          <h3>Sveriges årliga utsläpp</h3>
           <p>
             Naturvårdsverket är myndigheten som redovisar Sveriges årliga
             utsläpp.
@@ -32,7 +36,7 @@ export default function SourcesPage() {
         </FAQ>
 
         <FAQ>
-          <h2>Sveriges koldioxidbudget</h2>
+          <h3>Sveriges koldioxidbudget</h3>
           <p>
             I en vetenskaplig artikel skrev man om hur Storbritannien och
             Sverige ligger till med sitt åtagande till Parisavtalet genom att
@@ -47,7 +51,7 @@ export default function SourcesPage() {
         </FAQ>
 
         <FAQ>
-          <h2>Klimateffekterna i Sverige</h2>
+          <h3>Klimateffekterna i Sverige</h3>
           <p>
             Sveriges Metrologiska och Hydrologiska Institut (SMHI)
             tillhandahåller öppen data om bland annat olika klimatindikatorer.
