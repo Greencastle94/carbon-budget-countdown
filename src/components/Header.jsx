@@ -26,9 +26,10 @@ const StyledHeader = styled.header`
 
   .text {
     display: flex;
+    align-items: center;
 
     img {
-      width: 24px;
+      height: 20px;
       margin-right: 8px;
     }
   }
@@ -39,8 +40,8 @@ export default function Header() {
     <StyledHeader>
       <Link to="/">
         <div className="text">
-          <img src={logo} alt="" />
-          <h1>Klimatklockan</h1>
+          <img src={logo} alt="" width="20" />
+          <p>Klimatklockan</p>
         </div>
       </Link>
       <div className="text">
