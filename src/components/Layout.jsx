@@ -24,6 +24,7 @@ export default function Layout({ children }) {
       <main>{children}</main>
       <Footer>
         <nav>
+          <a href="/learn-more">Jag vill lära mig mer</a>
           <a href="/about">Om Klimatklockan</a>
           <a href="/sources">Källor</a>
         </nav>
