@@ -1,13 +1,17 @@
 import React from "react";
 import styled from "@emotion/styled";
 import Layout from "../components/Layout";
+import PageTitle from "../components/PageTitle";
 import BackButton from "../components/BackButton";
+import ExternalLink from "../components/ExternalLink";
 import ContentWrapper from "../components/ContentWrapper";
 
 const Container = styled.div`
   margin-bottom: 32px;
 
-  p {
+  p,
+  a,
+  h3 {
     max-width: 700px;
     margin-right: auto;
     margin-left: auto;
@@ -17,10 +21,10 @@ const Container = styled.div`
 export default function AboutPage() {
   return (
     <Layout>
-      <BackButton to="/" />
+      <PageTitle>Om Klimatklockan</PageTitle>
+
       <ContentWrapper>
         <Container>
-          <h2>Om Klimatklockan</h2>
           <p>
             Många i Sverige känner till att vi har pågående mänskligt drivna
             klimatförändringar och att det är allvarligt, men väldigt få känner
@@ -32,6 +36,8 @@ export default function AboutPage() {
             <a
               style={{ fontWeight: "normal" }}
               href="https://www.dn.se/klimatet-just-nu/"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               “Klimatet just nu”
             </a>{" "}
@@ -53,27 +59,29 @@ export default function AboutPage() {
             med hemsidan. Den ligger på en server med lågt koldioxidavtryck och
             mängden data som behöver skickas över nätet har minimerats så mycket
             det går.
-            <br />
-            <a
-              style={{ marginBottom: "1rem" }}
-              href="https://www.websitecarbon.com/"
-            >
-              Testa hemsidans klimatavtryck här!
-            </a>
           </p>
+          <ExternalLink
+            style={{ marginBottom: "1rem" }}
+            href="https://www.websitecarbon.com/"
+          >
+            Testa hemsidans klimatavtryck här!
+          </ExternalLink>
         </Container>
 
         <Container>
-          <h2>Vad är en koldioxidbudget?</h2>
-          <p style={{ marginBottom: 0 }}>
+          <h3>Vad är en koldioxidbudget?</h3>
+          <p>
             Mängden koldioxid i atmosfären korrelerar med en viss genomsnittlig
             global temperatur. På så sätt kan man räkna fram ett tak för hur
             mycket koldioxid vi kan släppa ut innan vi når en viss global
             uppvärmning.
-            <br />
-            <a href="https://en.wikipedia.org/wiki/Emissions_budget">Läs mer</a>
           </p>
+          <ExternalLink href="https://en.wikipedia.org/wiki/Emissions_budget">
+            Läs mer
+          </ExternalLink>
         </Container>
+
+        <BackButton to="/" />
       </ContentWrapper>
     </Layout>
   );

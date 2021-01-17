@@ -1,13 +1,15 @@
 import React from "react";
 import styled from "@emotion/styled";
 import Layout from "../components/Layout";
+import PageTitle from "../components/PageTitle";
 import BackButton from "../components/BackButton";
+import ExternalLink from "../components/ExternalLink";
 import ContentWrapper from "../components/ContentWrapper";
 
 const FAQ = styled.div`
   margin-bottom: 32px;
-
   p,
+  a,
   h3 {
     max-width: 700px;
     margin-right: auto;
@@ -18,21 +20,18 @@ const FAQ = styled.div`
 export default function SourcesPage() {
   return (
     <Layout>
-      <BackButton to="/" />
-      <ContentWrapper>
-        <h2>Källor</h2>
-        <br />
+      <PageTitle>Källor</PageTitle>
 
+      <ContentWrapper>
         <FAQ>
           <h3>Sveriges årliga utsläpp</h3>
           <p>
             Naturvårdsverket är myndigheten som redovisar Sveriges årliga
             utsläpp.
-            <br />
-            <a href="https://www.naturvardsverket.se/Sa-mar-miljon/Klimat-och-luft/Klimat/Tre-satt-att-berakna-klimatpaverkande-utslapp/Kvartals--och-preliminara-arsvisa-vaxthusgasutslapp/">
-              Läs mer
-            </a>
           </p>
+          <ExternalLink href="https://www.naturvardsverket.se/Sa-mar-miljon/Klimat-och-luft/Klimat/Tre-satt-att-berakna-klimatpaverkande-utslapp/Kvartals--och-preliminara-arsvisa-vaxthusgasutslapp/">
+            Läs mer
+          </ExternalLink>
         </FAQ>
 
         <FAQ>
@@ -43,11 +42,10 @@ export default function SourcesPage() {
             titta på hittills beslutade policys och mål. Koldioxidbudgeten för
             Sverige som räknades fram i artikeln användes för att skapa
             Klimatklockan.
-            <br />
-            <a href="https://www.tandfonline.com/doi/full/10.1080/14693062.2020.1728209">
-              Länk till artikeln
-            </a>
           </p>
+          <ExternalLink href="https://www.tandfonline.com/doi/full/10.1080/14693062.2020.1728209">
+            Länk till artikeln
+          </ExternalLink>
         </FAQ>
 
         <FAQ>
@@ -55,12 +53,13 @@ export default function SourcesPage() {
           <p>
             Sveriges Metrologiska och Hydrologiska Institut (SMHI)
             tillhandahåller öppen data om bland annat olika klimatindikatorer.
-            <br />
-            <a href="https://www.smhi.se/klimat/klimatet-da-och-nu/klimatindikatorer">
-              Läs mer
-            </a>
           </p>
+          <ExternalLink href="https://www.smhi.se/klimat/klimatet-da-och-nu/klimatindikatorer">
+            Läs mer
+          </ExternalLink>
         </FAQ>
+
+        <BackButton to="/" />
       </ContentWrapper>
     </Layout>
   );

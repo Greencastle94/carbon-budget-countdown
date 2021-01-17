@@ -7,7 +7,8 @@ import ContentWrapper from "../components/ContentWrapper";
 const Container = styled.div`
   margin-bottom: 32px;
 
-  p {
+  p,
+  a {
     max-width: 700px;
     margin-right: auto;
     margin-left: auto;
@@ -17,7 +18,6 @@ const Container = styled.div`
 export default function CookiePolicy() {
   return (
     <Layout>
-      <BackButton to="/" />
       <ContentWrapper>
         <Container>
           <h2>Vad är Cookies?</h2>
@@ -40,6 +40,8 @@ export default function CookiePolicy() {
             utveckla och förbättra hemsidan.
           </p>
         </Container>
+
+        <BackButton to="/" />
       </ContentWrapper>
     </Layout>
   );
