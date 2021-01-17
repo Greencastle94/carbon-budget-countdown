@@ -33,11 +33,7 @@ const YearSteps = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 8px;
-  margin-left: 4%; // Needs to be adjusted manually on timeline changes
-
-  @media (min-width: 768px) {
-    margin-left: 11%;
-  }
+  margin-left: ${props => `calc(${props.marginLeft}% - 24px)`};
 `;
 
 const Year = styled.p`
@@ -75,7 +71,7 @@ export default function Chart() {
           <Bar key={i} width={barWidth} />
         ))}
       </Graph>
-      <YearSteps>
+      <YearSteps marginLeft={barWidth}>
         {yearSteps.map((year, i) => (
           <Year key={i}>{year}</Year>
         ))}
