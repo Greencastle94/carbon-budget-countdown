@@ -5,7 +5,7 @@ import arrowImg from "../../static/arrow-right.svg";
 
 const StyledBackButton = styled(Link)`
   display: block;
-  margin-top: 48px;
+  margin: 48px auto 0;
 
   font-family: var(--font-heading);
   font-weight: bold;
