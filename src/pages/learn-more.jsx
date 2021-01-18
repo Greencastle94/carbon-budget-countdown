@@ -42,6 +42,20 @@ export default function LearnMorePage() {
         </Container>
 
         <Container>
+          <h3>Hantera klimatsamtal</h3>
+          <p>
+            Hur pratar man med folk om klimatet? Hur hanterar man vissa
+            situationer eller argument? Klimatprata är en organisation som
+            fokuserar på just det området, att prata om klimatet. De ger råd och
+            tips på vad man kan svara eller hur man kan hantera olika
+            situationer.
+          </p>
+          <ExternalLink href="https://klimatprata.se/">
+            Klimatprata
+          </ExternalLink>
+        </Container>
+
+        <Container>
           <h3>Hållbara livsstilsval</h3>
           <p>
             Vill du dra ditt strå till stacken och minska din påverkan på miljön
@@ -73,20 +87,6 @@ export default function LearnMorePage() {
             Klimatkontot
           </ExternalLink>
           <ExternalLink href="https://www.svalna.se/">Svalna</ExternalLink>
-        </Container>
-
-        <Container>
-          <h3>Hantera klimatsamtal</h3>
-          <p>
-            Hur pratar man med folk om klimatet? Hur hanterar man vissa
-            situationer eller argument? Klimatprata är en organisation som
-            fokuserar på just det området, att prata om klimatet. De ger råd och
-            tips på vad man kan svara eller hur man kan hantera olika
-            situationer.
-          </p>
-          <ExternalLink href="https://klimatprata.se/">
-            Klimatprata
-          </ExternalLink>
         </Container>
 
         <BackButton to="/" />
