@@ -11,8 +11,9 @@
   --font-heading: "Roboto Mono", monospace;
   --font-paragraph: "Noto Sans", sans-serif;
 
-  /* MARGIN */
+  /* OTHER */
   --side-margin-mobile: 16px;
+  --header-height: 64px;
 }
 
 html {
@@ -21,6 +22,10 @@ html {
 
 body {
   margin: 0;
+}
+
+main {
+  margin-top: var(--header-height);
 }
 
 h2 {

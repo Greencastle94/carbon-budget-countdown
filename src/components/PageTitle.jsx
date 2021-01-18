@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 
 const StyledH2 = styled.h2`
   text-align: center;
-  margin: 40px var(--side-margin-mobile) 0;
+  margin: calc(var(--header-height) + 30px) var(--side-margin-mobile) 0;
 `;
 
 export default function PageTitle({ children }) {

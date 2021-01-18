@@ -5,9 +5,16 @@ import flagImg from "../../static/flag.svg";
 import { Link } from "gatsby";
 
 const StyledHeader = styled.header`
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: var(--background-color);
+  z-index: 1;
+
   display: flex;
   justify-content: space-around;
-  margin-top: 20px;
+  padding-top: 20px;
+  box-shadow: 0 0 20px 30px rgba(0, 0, 0, 1);
 
   h1,
   p {
