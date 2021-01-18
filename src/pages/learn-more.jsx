@@ -48,7 +48,7 @@ export default function LearnMorePage() {
             situationer eller argument? Klimatprata är en organisation som
             fokuserar på just det området, att prata om klimatet. De ger råd och
             tips på vad man kan svara eller hur man kan hantera olika
-            situationer.
+            samtalssituationer.
           </p>
           <ExternalLink href="https://klimatprata.se/">
             Klimatprata
@@ -81,7 +81,8 @@ export default function LearnMorePage() {
             en uppskattad siffra på hur mycket CO<sub>2</sub> man släpper ut på
             ett år. Om du inte orkar att hela tiden behöva fylla i och uppdatera
             efter förändringar du gör i ditt liv finns Svalna som har
-            automatiserat den processen.
+            automatiserat den processen och även är baserad på din faktiska
+            konsumtion och inte estimeringar.
           </p>
           <ExternalLink href="https://www.klimatkontot.se/">
             Klimatkontot
