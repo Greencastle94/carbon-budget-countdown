@@ -13,7 +13,6 @@ function SEO({ author, description, lang, meta, titleProp }) {
             title
             description
             author
-            image
           }
         }
       }
@@ -23,7 +22,6 @@ function SEO({ author, description, lang, meta, titleProp }) {
   const title = titleProp || site.siteMetadata.title;
   const metaDescription = description || site.siteMetadata.description;
   const metaAuthor = author || site.siteMetadata.author;
-  const imagePath = site.siteMetadata.image;
   const siteUrl = site.siteMetadata.siteUrl;
 
   return (
@@ -59,11 +57,15 @@ function SEO({ author, description, lang, meta, titleProp }) {
         },
         {
           property: `og:image`,
-          content: imagePath,
+          content: `${site.siteMetadata.siteUrl}/preview.png`,
         },
         {
           name: `twitter:card`,
           content: `summary`,
+        },
+        {
+          name: `twitter:image`,
+          content: `${site.siteMetadata.siteUrl}/preview-square.png`,
         },
         {
           name: `twitter:creator`,
