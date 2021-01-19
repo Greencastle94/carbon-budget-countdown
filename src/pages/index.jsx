@@ -53,8 +53,8 @@ export default function Home() {
         <ContentWrapper dark center>
           <h2>Vi kan stoppa klockan</h2>
           <p>
-            Genom att minska våra utsläpp kan vi förlänga tiden vi har på oss,
-            och tillslut, stoppa klockan innan tiden tagit slut.
+            Genom att minska utsläppen kan vi förlänga tiden vi har på oss, och
+            tillslut, stoppa klockan innan tiden tagit slut.
           </p>
         </ContentWrapper>
 
