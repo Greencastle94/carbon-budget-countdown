@@ -69,6 +69,16 @@ export default function AboutPage() {
         </Container>
 
         <Container>
+          <h3>Är det som står på hemsidan korrekt?</h3>
+          <p>
+            För att se till att Klimatklockan förmedlar fakta korrekt så har
+            forskare på Uppsala universitet fått säkerställa detta. Vi vill även
+            vara så transparenta som möjligt och hänvisar därför till alla
+            källor som används på hemsidan (kolla länk längst ner).
+          </p>
+        </Container>
+
+        <Container>
           <h3>Vad är en koldioxidbudget?</h3>
           <p>
             Mängden koldioxid i atmosfären korrelerar med en viss genomsnittlig

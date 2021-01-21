@@ -31,9 +31,10 @@ export default function Home() {
           <h2>Vad händer när tiden är slut?</h2>
           <p>
             Inget kommer plötsligt att hända om tiden tar slut men Sverige har
-            då misslyckats att fullfölja sitt åtagande till Paris-avtalet, att
-            hålla världen under 1,5 graders global uppvärmning. Vi börjar då att
-            gnaga på andra länders koldioxidbudgetar.
+            då misslyckats att fullfölja sitt åtagande till Paris-avtalet Det
+            vill säga hålla världen väl under 2 graders global uppvärmning med
+            sikte på 1,5 grader. Vi börjar då att gnaga på andra länders
+            koldioxidbudgetar.
           </p>
         </ContentWrapper>
 
