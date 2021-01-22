@@ -29,6 +29,11 @@ export default function Layout({ children }) {
           <a href="/sources">Källor</a>
         </nav>
         <p>Kontakt: klimatklockan@gmail.com</p>
+        <img
+          style={{ margin: "0 auto 20px" }}
+          src="https://api.thegreenwebfoundation.org/greencheckimage/klimatklockan.se"
+          alt="This website is hosted Green - checked by thegreenwebfoundation.org"
+        />
       </Footer>
       <TrackingNotice />
     </>
