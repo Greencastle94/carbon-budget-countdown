@@ -87,23 +87,31 @@ export default function Countdown({
 
   return (
     <CountdownWrapper>
-      <YearDay>{`${timeLeft.years} ÅR, ${timeLeft.days} ${
-        timeLeft.days === 1 ? "DAG" : "DAGAR"
-      },`}</YearDay>
+      {timeLeft.years &&
+        timeLeft.days &&
+        timeLeft.hours &&
+        timeLeft.minutes &&
+        timeLeft.seconds && (
+          <>
+            <YearDay>{`${timeLeft.years} ÅR, ${timeLeft.days} ${
+              timeLeft.days === 1 ? "DAG" : "DAGAR"
+            },`}</YearDay>
 
-      <HourMinSec>
-        {`${timeLeft.hours < 10 ? 0 : ""}${timeLeft.hours}:${
-          timeLeft.minutes < 10 ? 0 : ""
-        }${timeLeft.minutes}:${timeLeft.seconds < 10 ? 0 : ""}${
-          timeLeft.seconds
-        }`}
-      </HourMinSec>
+            <HourMinSec>
+              {`${timeLeft.hours < 10 ? 0 : ""}${timeLeft.hours}:${
+                timeLeft.minutes < 10 ? 0 : ""
+              }${timeLeft.minutes}:${timeLeft.seconds < 10 ? 0 : ""}${
+                timeLeft.seconds
+              }`}
+            </HourMinSec>
 
-      <HourMinSec_Labels>
-        {`${timeLeft.hours === 1 ? "timme" : "timmar"} ${
-          timeLeft.minutes === 1 ? "minut" : "minuter"
-        } ${timeLeft.seconds === 1 ? "sekund" : "sekunder"}`}
-      </HourMinSec_Labels>
+            <HourMinSec_Labels>
+              {`${timeLeft.hours === 1 ? "timme" : "timmar"} ${
+                timeLeft.minutes === 1 ? "minut" : "minuter"
+              } ${timeLeft.seconds === 1 ? "sekund" : "sekunder"}`}
+            </HourMinSec_Labels>
+          </>
+        )}
     </CountdownWrapper>
   );
 }
