@@ -66,11 +66,6 @@ export default function AboutPage() {
           >
             Testa hemsidans klimatavtryck här!
           </ExternalLink>
-          <img
-            style={{ display: "block", margin: "20px auto 0" }}
-            src="https://api.thegreenwebfoundation.org/greencheckimage/klimatklockan.se"
-            alt="This website is hosted Green - checked by thegreenwebfoundation.org"
-          />
         </Container>
 
         <Container>
