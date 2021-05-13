@@ -39,7 +39,7 @@ const HourMinSec = styled.p`
   }
 `;
 
-const HourMinSec_Labels = styled.p`
+const HourMinSecLabels = styled.p`
   color: var(--primary-color);
   font-size: 14px;
   font-family: var(--font-heading);
@@ -68,7 +68,7 @@ export default function Countdown({
     const then = startDate.getTime() + millisecondsLeft;
     const now = new Date().getTime();
     setCounter(then - now);
-  }, []);
+  }, [currentBudget, currentEmissions, startDate]);
 
   // Updating counter
   React.useEffect(() => {
@@ -105,11 +105,11 @@ export default function Countdown({
               }`}
             </HourMinSec>
 
-            <HourMinSec_Labels>
+            <HourMinSecLabels>
               {`${timeLeft.hours === 1 ? "timme" : "timmar"} ${
                 timeLeft.minutes === 1 ? "minut" : "minuter"
               } ${timeLeft.seconds === 1 ? "sekund" : "sekunder"}`}
-            </HourMinSec_Labels>
+            </HourMinSecLabels>
           </>
         )}
     </CountdownWrapper>
