@@ -35,7 +35,7 @@ export default function Layout({ children }) {
           <a href="/sources">Källor</a>
         </nav>
         <p>Kontakt: klimatklockan@gmail.com</p>
-        <div id="wcb" class="carbonbadge"></div>
+        <div id="wcb" className="carbonbadge"></div>
         <StaticQuery
           query={graphql`
             query {
