@@ -17,10 +17,10 @@
     "convert": "csvtojson data/csv/'${npm_config_filename}'.csv > data/'${npm_config_filename}'.json"
   },
   "dependencies": {
-    "@emotion/core": "^10.1.1",
-    "@emotion/styled": "^10.0.27",
+    "@emotion/core": "^10.3.1",
+    "@emotion/styled": "^10.3.0",
     "gatsby": "^2.32.13",
-    "gatsby-background-image": "^1.5.3",
+    "gatsby-background-image": "^1.6.0",
     "gatsby-image": "^2.11.0",
     "gatsby-plugin-emotion": "^4.5.0",
     "gatsby-plugin-google-analytics": "^2.11.0",
@@ -34,7 +34,7 @@
     "react-dom": "^16.14.0",
     "react-helmet": "^6.1.0",
     "react-share": "^4.4.0",
-    "victory": "^35.8.1"
+    "victory": "^35.11.4"
   },
   "devDependencies": {
     "dotenv": "^8.6.0",
