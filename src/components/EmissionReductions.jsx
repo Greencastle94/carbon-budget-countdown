@@ -29,7 +29,7 @@ const UpperContainer = styled.div`
 const BottomContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-left: ${props => props.percentage + "%"};
+  margin-left: ${props => Math.abs(props.percentage) + "%"};
   margin-top: 8px;
 `;
 
@@ -43,27 +43,25 @@ const BigBar = styled.div`
 const YearlyEmissions = styled.div`
   position: absolute;
   height: 100%;
-  width: ${props => props.percentage + "%"};
-  background-color: var(--primary-color);
+  width: ${props => Math.abs(props.percentage) + "%"};
+  background-color: ${props =>
+    props.percentage > 0 ? "var(--primary-color)" : "var(--warning-color)"};
 `;
 
 export default function Chart() {
-  let percentage =
-    Math.round(
-      ((YEARLY_EMISSIONS[CURRENT_DATA_YEAR - 1] -
-        YEARLY_EMISSIONS[CURRENT_DATA_YEAR]) /
-        YEARLY_EMISSIONS[CURRENT_DATA_YEAR - 1]) *
-        100 *
-        10
-    ) / 10;
-  percentage = percentage > 0 ? -percentage : percentage;
+  let percentage = -Math.round(
+    ((YEARLY_EMISSIONS[CURRENT_DATA_YEAR - 1] -
+      YEARLY_EMISSIONS[CURRENT_DATA_YEAR]) /
+      YEARLY_EMISSIONS[CURRENT_DATA_YEAR - 1]) *
+      100
+  );
 
   return (
     <Container>
       <UpperContainer>
-        <p className="current">{`Utsläppsminskning ${
-          CURRENT_DATA_YEAR - 1
-        }/${CURRENT_DATA_YEAR}`}</p>
+        <p className="current">{`Utsläpps${
+          percentage > 0 ? "ökning" : "minskning"
+        } ${CURRENT_DATA_YEAR - 1}/${CURRENT_DATA_YEAR}`}</p>
         <p className="target">{`${NECESSARY_REDUCTION_RATE} % / år`}</p>
       </UpperContainer>
       <BigBar>
@@ -74,7 +72,9 @@ export default function Chart() {
       <BottomContainer
         percentage={(percentage / NECESSARY_REDUCTION_RATE) * 100}
       >
-        <p className="current">{`${percentage} %`}</p>
+        <p className="current">{`${
+          percentage > 0 ? "+" : ""
+        }${percentage} %`}</p>
         <p className="target">{`Parisavtalet kräver`}</p>
       </BottomContainer>
     </Container>
