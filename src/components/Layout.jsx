@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import TrackingNotice from "./TrackingNotice";
-import SEO from "./seo";
+import Seo from "./seo";
 import "../global.css";
 
 export default function Layout({ children }) {
@@ -25,7 +25,7 @@ export default function Layout({ children }) {
           defer
         />
       </Helmet>
-      <SEO />
+      <Seo />
       <Header />
       <main>{children}</main>
       <Footer>

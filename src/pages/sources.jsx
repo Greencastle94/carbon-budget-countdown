@@ -6,7 +6,7 @@ import BackButton from "../components/BackButton";
 import ExternalLink from "../components/ExternalLink";
 import ContentWrapper from "../components/ContentWrapper";
 
-const FAQ = styled.div`
+const Faq = styled.div`
   margin-bottom: 32px;
   p,
   a,
@@ -23,7 +23,7 @@ export default function SourcesPage() {
       <PageTitle>Källor</PageTitle>
 
       <ContentWrapper>
-        <FAQ>
+        <Faq>
           <h3>Sveriges årliga utsläpp</h3>
           <p>
             Naturvårdsverket är myndigheten som redovisar Sveriges årliga
@@ -32,9 +32,9 @@ export default function SourcesPage() {
           <ExternalLink href="https://www.naturvardsverket.se/Sa-mar-miljon/Klimat-och-luft/Klimat/Tre-satt-att-berakna-klimatpaverkande-utslapp/Kvartals--och-preliminara-arsvisa-vaxthusgasutslapp/">
             Läs mer
           </ExternalLink>
-        </FAQ>
+        </Faq>
 
-        <FAQ>
+        <Faq>
           <h3>Sveriges koldioxidbudget</h3>
           <p>
             I en vetenskaplig artikel skrev man om hur Storbritannien och
@@ -46,9 +46,9 @@ export default function SourcesPage() {
           <ExternalLink href="https://www.tandfonline.com/doi/full/10.1080/14693062.2020.1728209">
             Länk till artikeln
           </ExternalLink>
-        </FAQ>
+        </Faq>
 
-        <FAQ>
+        <Faq>
           <h3>Klimateffekterna i Sverige</h3>
           <p>
             Sveriges Metrologiska och Hydrologiska Institut (SMHI)
@@ -57,7 +57,7 @@ export default function SourcesPage() {
           <ExternalLink href="https://www.smhi.se/klimat/klimatet-da-och-nu/klimatindikatorer">
             Läs mer
           </ExternalLink>
-        </FAQ>
+        </Faq>
 
         <BackButton to="/" />
       </ContentWrapper>
