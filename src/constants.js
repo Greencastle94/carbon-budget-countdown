@@ -10,7 +10,7 @@ export const YEARLY_EMISSIONS = {
 }; // MtCO2
 export const CURRENT_DATA_YEAR = 2021;
 export const CURRENT_EMISSIONS = YEARLY_EMISSIONS[CURRENT_DATA_YEAR];
-export const NECESSARY_REDUCTION_RATE = -12;
+export const NECESSARY_REDUCTION_RATE = -20;
 
 export const MONTHS = [
   "Januari",
