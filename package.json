@@ -20,7 +20,6 @@
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
     "gatsby": "^5.11.0",
-    "gatsby-background-image": "^1.6.0",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-emotion": "^8.11.0",
     "gatsby-plugin-manifest": "^5.11.0",
